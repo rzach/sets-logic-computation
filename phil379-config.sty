@@ -1,22 +1,16 @@
-% For the sample text, let's redefine the logical connectives
+% Configuration file for Logic II textbook
 
-\DeclareDocumentMacro \lnot {\mathord{\sim}}
+% Let's be unpretentious and use A, B, C, etc. for formulas ...
 
-\DeclareDocumentMacro \land {\mathbin{\&}}
+\ollatinformulas
 
-\DeclareDocumentMacro \lif {\supset}
+% ... and use bold italic instead of Fraktur for structures
 
-\DeclareDocumentMacro \liff {\equiv}
+\DeclareMathAlphabet{\mathbi}{OT1}{pplx}{b}{it}
 
-% Set abstracts with a | instead of a :
+\DeclareDocumentCommand \Struct { m }{\mathbi #1}
 
-\DeclareDocumentCommand \Setabs { m m }{\{ #1 \mid #2 \}}
-
-% let's be pretentious about the plural of formula
-
-\settexttoken{formula}{formula}{formulae}
-
-\settexttoken{subformula}{subformula}{subformulae}
+% I think I like ``countable'' and ``uncountable'' better?
 
 \settexttoken{enumerable}{countable}{countable}
 
@@ -24,12 +18,17 @@
 
 \settexttoken{denumerable}{countably infinite}{countably infinite}
 
-% make biconditional, verum defined
+% Biconditional, verum are defined symbols
 
 \tagtrue{defIff,defTrue}
 \tagfalse{prvIff,prvTrue}
 
-% cases for conditional, universal quantifier left to reader
+% I'll leave cases for conditional, universal quantifier as exercises
 
-\tagtrue{probIf,probAll}
+\tagtrue{probAnd,probIf,probAll}
 
+% Which proof system?  Not sure yet, let's use natural deduction for
+% now. prfND is on by default, we just have to supress includion of
+% the sequent calculus.
+
+\tagfalse{prfSC}
