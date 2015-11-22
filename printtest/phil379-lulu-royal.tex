@@ -1,0 +1,116 @@
+% phil379.tex
+%
+% driver file phil379.tex to produce text on letter-size paper
+% with standard layout and margins
+
+% We use the memoir class for maximal flexibility of layout, but any
+% class will do
+
+\documentclass[11pt]{memoir}
+
+% \olpath has to point to the location of the OLP main
+% directory/folder.  We're compiling from subdirectory
+% courses/sample/phil379/printtest, so the main directory is three
+% levels up.
+\newcommand{\olpath}{../../../}
+
+% load all the Open Logic definitions. This will also load the
+% local definitions in open-logic-sample-config.sty
+\input{\olpath/sty/open-logic.sty}
+
+% all links plain black for printing
+
+\hypersetup{hidelinks}
+
+% we want all the problems deferred to the end
+\input{\olpath/sty/open-logic-defer.sty}
+
+% let's set the whole thing in Palatino, with Helvetica for
+% sans-serif, and spread the lines a bit to make the text more
+% readable
+
+\usepackage{mathpazo}
+\usepackage[scaled=0.95]{helvet}
+\linespread{1.05}
+
+% set stock & paper size to Lulu's ``Royal''
+\setstocksize{23.389cm}{15.593cm}
+\settrimmedsize{\stockheight}{\stockwidth}{*}
+\settrims{0pt}{0pt}
+
+% let's calculate the line length for 65 characters in \normalfont
+\setlxvchars
+
+% set the size of the type block to calculated width in golden ratio
+
+\settypeblocksize{*}{\lxvchars}{1.618}
+
+% set spine and and edge maring in golden ratio
+
+\setlrmargins{*}{*}{1.618}
+
+\setulmargins{60pt}{*}{*}
+
+\setheaderspaces{*}{*}{1.618}
+
+\checkandfixthelayout
+
+\begin{document}
+
+% First we make a titlepage
+\newbox\adjust
+
+\begin{titlingpage}
+\begin{raggedleft}
+  \fontsize{48pt}{7em}\selectfont\bfseries\sffamily
+  \setbox\adjust\hbox{\phantom{,}}
+Sets,\\
+Logic,\\
+Computation\usebox\adjust
+\vskip 4ex
+\normalfont\Huge\textbf{Edited by\usebox\adjust\\ \href{http://richardzach.org/}{Richard Zach}\usebox\adjust}\
+
+\end{raggedleft}
+
+\vfill
+
+% oluselicense generates a license mark that a) licenses the result
+% under a CC-BY licence and b) acknowledges the original source (the
+% OLP).  Acknowledgment of the source is a requirement under the
+% conditions of the CC-BY license used by the OLP, but you are not
+% required to license the product itself under CC-BY.
+
+\oluselicense
+% Title of this version of the OLT with link to source
+{\href{https://github.com/rzach/phil379}{\textit{Sets, Logic, Computation}}}
+% Author of this version
+{\href{http://richardzach.org/}{Richard Zach}}
+\end{titlingpage}
+
+\frontmatter
+\pagestyle{ruled}
+
+\tableofcontents*
+
+\mainmatter
+
+\olimport*[sets-functions-relations]{sets-functions-relations}
+
+\olimport*[first-order-logic]{first-order-logic}
+
+\olimport*[turing-machines]{turing-machines}
+
+\stopproblems
+
+% now typeset all the problems as an appendix. If you want problems at
+% the end of each chapter, delete this part and put
+% \problemsperchapter in the preamble
+
+\backmatter
+
+\chapter{Problems}
+
+\printproblems
+
+\end{document}
+

@@ -1,0 +1,121 @@
+% cover-lulu-royal.tex
+%
+% make a cover PDF for lulu.com's ``royal'' booksize.
+
+\documentclass{memoir}
+\usepackage{helvet}
+\usepackage{mathpazo}
+
+\newcommand{\olpath}{../../../}
+
+\usepackage[absolute,overlay]{textpos}
+\usepackage{rotating}
+\usepackage{xcolor}
+
+\definecolor{OLPiceblue}{RGB}{179,199,227}
+\definecolor{OLPreflexblue}{RGB}{12,28,140}
+
+% lulu.com's instructions:
+% Spine width: 23.351 Postscript points wide (0.824 cm) (97 px)
+% Spine begins 451 Postscript points (15.908 cm) (1879 px) from the left.
+% Total cover width: 925.351 X 681 Postscript points (32.640 cm X
+% 24.021 cm) (3856px X 2838px)
+
+\newlength{\coverheight}
+\newlength{\coverwidth}
+\newlength{\spinewidth}
+\newlength{\spinepos} % spine starts here, width = \spinewidth
+\newlength{\coverpos} % front cover starts here, width = \spinepos
+
+\setlength{\coverheight}{681bp}
+\setlength{\coverwidth}{925.351bp}
+\setlength{\spinewidth}{23.351bp}
+\setlength{\spinepos}{451bp}
+
+% \coverpos = \spinepso + \spinewidth
+\setlength{\coverpos}{\spinepos}
+\addtolength{\coverpos}{\spinewidth}
+
+% set stock size to total width & height of cover 
+\setstocksize{\coverheight}{\coverwidth}
+
+% pagesize = stocksize
+\settrimmedsize{\stockheight}{\stockwidth}{*}
+\settrims{0pt}{0pt}
+
+% no margins or headers
+\setlrmarginsandblock{0pt}{0pt}{*}
+\setheadfoot{0pt}{0pt}
+\setulmarginsandblock{0pt}{0pt}{*}
+\setheadfoot{0pt}{0pt}
+\setlength{\headsep}{0pt}
+
+
+% finalize the page layout
+\checkandfixthelayout[fixed]
+\typeoutlayout
+
+\color{OLPreflexblue}
+
+\begin{document}
+% no folios
+\pagestyle{empty}
+
+% set back background to Ice Blue
+
+\pagecolor{OLPiceblue}
+
+% make a spine
+\begin{textblock*}{\spinewidth}(\spinepos,0bp)%
+\noindent\hfil\rotatebox{-90}{% make spine text readbale when book is lying cover up
+      \hbox to \coverheight{\hfil
+          \huge{\bfseries\color{OLPreflexblue}
+            Sets, Logic, Computation \hspace{8em} Richard Zach}\hfil}}\hfil
+\end{textblock*}
+\newbox\adjust
+% make front cover
+\begin{textblock*}{\spinepos}(\coverpos,0pt)
+  \noindent\hfil
+  \begin{minipage}[b][\coverheight][s]{.8\spinepos}
+    \vfil
+      \begin{raggedleft}
+        \fontsize{48pt}{7em}\selectfont\bfseries\sffamily
+        \setbox\adjust\hbox{\phantom{,}}
+        Sets,\\ Logic,\\ Computation\usebox\adjust\\
+      \vfil
+      \normalfont\Huge
+      \textbf{Edited by\usebox\adjust\\ Richard Zach}\usebox\adjust\\
+      \vfil
+      \includegraphics[width=2.7cm]{\olpath/assets/logos/openlogic-logo-color}%
+\usebox\adjust\\
+      \vspace*{1cm}
+      \end{raggedleft}
+  \end{minipage}
+  \hfil
+  \end{textblock*}
+
+% make back cover
+\begin{textblock*}{\spinepos}(0pt,0pt)
+  \noindent\hfil
+  \begin{minipage}[b][\coverheight][b]{.8\spinepos}
+\begin{minipage}[b]{.9cm}
+\includegraphics[width=.9cm]{\olpath/assets/logos/by-color}
+\includegraphics[width=.9cm]{\olpath/assets/logos/cc-color}
+\includegraphics[width=.9cm]{\olpath/assets/logos/remix-color}
+\end{minipage}
+\hspace{.3cm}
+\begin{minipage}[b]{5cm}
+\sffamily\fontsize{8.5pt}{1em}\selectfont\textit{Sets, Logic, Computation}
+by Richard Zach is licensed under a Creative Commons Attribution 4.0
+International License. It is based on \textit{The Open Logic Text} by
+the Open Logic Project (openlogicproject.org), used under a Creative
+Commons Attribution 4.0 International License.
+\end{minipage}
+\hfill\color{OLPreflexblue}
+\includegraphics[width=2.7cm]{\olpath/assets/logos/openlogic-logo-color}
+\vspace*{1cm}
+  \end{minipage}
+  \hfil
+  \end{textblock*}
+
+\end{document}
