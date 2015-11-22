@@ -1,6 +1,6 @@
-% Open Logic Project
+% phil379.tex
 %
-% driver file open-logic-sample.tex to produce text on letter-size paper
+% driver file phil379.tex to produce text on letter-size paper
 % with standard layout and margins
 
 % We use the memoir class for maximal flexibility of layout, but any
@@ -35,11 +35,9 @@
 \begin{titlingpage}
 \begin{raggedleft}
 \fontsize{52pt}{2em}\selectfont\bfseries\sffamily
-Sample\\[.5ex] 
-Logic\\[.5ex] 
-Text
+Logic II
 \vskip 4ex
-\normalfont\Huge\textbf{\href{http://openlogicproject.org/}{Open Logic Project}}
+\normalfont\Huge\textbf{Edited by \href{http://richardzach.org/}{Richard Zach}}\
 
 \end{raggedleft}
 
@@ -53,9 +51,9 @@ Text
 
 \oluselicense
 % Title of this version of the OLT with link to source
-{\href{https://github.com/OpenLogicProject/OpenLogic/tree/master/courses/sample}{\textit{Sample Logic Text}}}
+{\href{https://github.com/rzach/phil379}{\textit{Logic II}}}
 % Author of this version
-{\href{http://openlogicproject.org/}{OLP}}
+{\href{http://richardzach.org/}{Richard Zach}}
 \end{titlingpage}
 
 \frontmatter
@@ -65,57 +63,11 @@ Text
 
 \mainmatter
 
-% olimport includes an entire part
-
 \olimport*[sets-functions-relations]{sets-functions-relations}
 
-% you can also import individual chapters
-
-\part{First-order Logic}
-
-\olimport*[first-order-logic/syntax-and-semantics]{syntax-and-semantics}
-
-\olimport*[first-order-logic/models-theories]{models-theories}
-
-\olimport*[first-order-logic/sequent-calculus]{sequent-calculus}
-
-\olimport*[first-order-logic/completeness]{completeness}
-
-% This allows you to leave out individual chapters, e.g.:
-
-% \olimport*[first-order-logic/beyond]{beyond}
-
-% But you can even import individual sections, in case you want to
-% rearrange them or add text
-
-\chapter{Beyond First-order Logic}
-
-\olimport*[first-order-logic/beyond]{introduction}
-
-\olimport*[first-order-logic/beyond]{many-sorted-logic}
-
-\olimport*[first-order-logic/beyond]{second-order-logic}
-
-\olimport*[first-order-logic/beyond]{higher-order-logic}
-
-\olimport*[first-order-logic/beyond]{intuitionistic-logic}
-
-\olimport*[first-order-logic/beyond]{modal-logics}
-
-\olimport*[first-order-logic/beyond]{other-logics}
-
-% OLEndChapterHook and OLEndPartHook should come at the end of each
-% chapter/part.
-
-\OLEndChapterHook
-
-\OLEndPartHook
-
-\olimport*[computability]{computability}
+\olimport*[first-order-logic]{first-order-logic}
 
 \olimport*[turing-machines]{turing-machines}
-
-\olimport*[incompleteness]{incompleteness}
 
 \stopproblems
 
