@@ -1,0 +1,136 @@
+% phil379-print.tex
+%
+% driver file phil379-screen.tex to produce text on Crown Quarto
+% size but all b/w for printing, and no cover
+
+% We use the memoir class for maximal flexibility of layout, but any
+% class will do
+
+\documentclass[11pt,openany]{memoir}
+
+\RequirePackage{amsthm,shadethm}
+\RequirePackage[full]{textcomp}
+
+% let's set the whole thing in Baskervald X, with Universalis ADF
+% Standard for sans-serif, and spread the lines a bit to make the text
+% more readable
+
+\usepackage[sfdefault]{universalis}
+\usepackage[osf]{Baskervaldx} % oldstyle figures
+\usepackage[bigdelims,baskervaldx]{newtxmath} 
+\usepackage[cal=boondoxo]{mathalfa}
+
+% Make sure we have a copyright symbol
+
+\def\copyright{\textcircled{C}}
+
+% \olpath has to point to the location of the OLP main
+% directory/folder.  We're compiling from subdirectory
+% courses/phil379/, so the main directory is two
+% levels up.
+
+\newcommand{\olpath}{../../}
+
+\def\oljobname{phil379}
+
+% load all the Open Logic definitions. This will also load the
+% local definitions in open-logic-sample-config.sty
+\input{\olpath/sty/open-logic.sty}
+%\input{open-logic.sty}
+
+%\hypersetup{linkcolor=dkleadbeater,citecolor=dkleadbeater}
+
+\pdfminorversion=4
+\tagfalse{olphotos-lowres}
+
+% all links plain black for printing
+
+\hypersetup{hidelinks}
+
+% next line needed for Adobe Acrobat to open the PDF.  may have
+% somethign to do with transparency in the PNG graphics files?
+
+\pdfminorversion=4
+
+% we want all the problems deferred to the end
+
+\input{\olpath/sty/open-logic-defer.sty}
+
+% set stock & paper size to Lulu's Crown Quarto dimensions
+
+\setstocksize{24.589cm}{18.91cm}
+
+\settrimmedsize{\stockheight}{\stockwidth}{*}
+\settrims{0pt}{0pt}
+
+% let's calculate the line length for 65 characters in \normalfont
+
+\setlxvchars
+
+% set the size of the type block to golden ratio calculated width
+
+\settypeblocksize{*}{1.05\lxvchars}{1.62}
+
+% set spine and and edge margin
+
+\setlrmargins{*}{*}{1.3}
+\setulmargins{80pt}{*}{*}
+\setheaderspaces{*}{*}{1}
+
+\checkandfixthelayout
+
+% Chapter style
+
+\makeatletter
+
+\colorlet{leadbeater}{black}
+\colorlet{dkleadbeater}{black}
+\colorlet{ltleadbeater}{black!5}
+\newlength{\barlength}
+\makechapterstyle{leadbeater}{%
+  \setlength{\afterchapskip}{40pt}
+  \setlength{\beforechapskip}{50pt}
+    \setlength{\midchapskip}{10pt}
+  \renewcommand*{\afterchapternum}{\par\nobreak\vskip 0pt}
+  \renewcommand*{\chapnamefont}{\fontsize{14pt}{0pt}\selectfont\bfseries\sffamily}
+  \renewcommand*{\chapnumfont}{\fontsize{14pt}{0pt}\selectfont\bfseries\sffamily}
+  \renewcommand*{\chaptitlefont}{\normalfont\fontsize{48pt}{48pt}\selectfont\bfseries\itshape\color{leadbeater}}
+  \renewcommand*{\printchaptername}{%
+    \chapnamefont\MakeUppercase{\@chapapp}}
+  \renewcommand*{\printchaptertitle}[1]{%
+    \chaptitlefont ##1\\[-\baselineskip]%
+    \hspace*{-20pt}%
+    \smash{\color{leadbeater}\rule{7pt}{250pt}}}
+}
+
+\renewcommand*{\partnamefont}{\fontsize{24pt}{0pt}\selectfont\bfseries\sffamily}
+\renewcommand*{\partnumfont}{\fontsize{24pt}{0pt}\selectfont\bfseries\sffamily}
+\renewcommand*{\parttitlefont}{\normalfont\fontsize{54pt}{54pt}\selectfont\bfseries\itshape\color{leadbeater}}
+\renewcommand*{\printpartname}{%
+  \partnamefont PART}
+
+\makeatother
+
+\chapterstyle{leadbeater}
+
+\copypagestyle{leadbeater}{headings}
+
+\makeevenhead{leadbeater}{\color{leadbeater}\sffamily\bfseries\thepage}{}
+             {\small\sffamily\color{leadbeater}\leftmark}
+\makeoddhead{leadbeater}{\small\sffamily\color{leadbeater}\rightmark}{}
+            {\color{leadbeater}\sffamily\bfseries\thepage}
+
+\setlength\shadeboxsep{6pt} 
+\setlength\shadedtextwidth\textwidth
+\advance\shadedtextwidth-22pt
+
+\usepackage[font={small,it}]{caption}
+
+\begin{document}
+
+% load the text
+
+\input{phil379}
+
+\end{document}
+

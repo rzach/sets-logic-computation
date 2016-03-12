@@ -11,10 +11,10 @@
 
 .PHONY : FORCE_MAKE
 
-all: phil379.pdf
+all: phil379-screen.pdf
 
 %.pdf : %.tex FORCE_MAKE
 	latexmk -pdf -dvi- -ps- $<
 
 clean:	
-	latexmk -c phil379.tex
+	latexmk -c phil379-screen.tex

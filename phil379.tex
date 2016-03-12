@@ -1,45 +1,121 @@
 % phil379.tex
 %
-% driver file phil379.tex to produce text on letter-size paper
-% with standard layout and margins
+% driver file phil379.tex to produce text
 
-% We use the memoir class for maximal flexibility of layout, but any
-% class will do
+\frontmatter
 
-\documentclass[letterpaper]{memoir}
+% bastard title
 
-% \olpath has to point to the location of the OLP main
-% directory/folder.  We're compiling from subdirectory courses/sample,
-% so the main directory is two levels up.
-\newcommand{\olpath}{../../}
+\pagestyle{empty}
 
-% load all the Open Logic definitions. This will also load the
-% local definitions in open-logic-sample-config.sty
-\input{\olpath/sty/open-logic.sty}
+\vspace*{100pt}
 
-% we want all the problems deferred to the end
-\input{\olpath/sty/open-logic-defer.sty}
-
-% let's set the whole thing in Palatino, with Helvetica for
-% sans-serif, and spread the lines a bit to make the text more
-% readable
-
-\usepackage{mathpazo}
-\usepackage[scaled=0.95]{helvet}
-\linespread{1.05}
-
-\begin{document}
-
-% First we make a titlepage
-
-\begin{titlingpage}
 \begin{raggedleft}
-\fontsize{52pt}{2em}\selectfont\bfseries\sffamily
-Logic II
-\vskip 4ex
-\normalfont\Huge\textbf{Edited by \href{http://richardzach.org/}{Richard Zach}}\
+{\fontsize{24pt}{24pt}\selectfont\bfseries\sffamily%
+  Sets, Logic, Computation}
+\end{raggedleft}
+
+
+\newpage
+
+% editorial board
+
+\vspace*{100pt}
+
+{\bfseries\itshape The Open Logic Project}
+
+\bigskip
+
+\textbf{\color{leadbeater}Instigator}
+
+\medskip
+
+Richard Zach, \emph{University of Calgary}
+
+\bigskip
+
+\textbf{\color{leadbeater}Editorial Board}
+
+\medskip
+
+Aldo Antonelli,$^\dagger$ \emph{University of California, Davis}
+
+Andrew Arana, \emph{Universit\'e Paris I Panth\'enon--Sorbonne}
+
+Jeremy Avigad, \emph{Carnegie Mellon University}
+
+Walter Dean, \emph{University of Warwick}
+
+Gillian Russell, \emph{University of North Carolina}
+
+Nicole Wyatt, \emph{University of Calgary}
+
+Audrey Yap, \emph{University of Victoria}
+
+\bigskip
+
+\textbf{\color{leadbeater}Contributors}
+
+\medskip
+
+Samara Burns, \emph{University of Calgary}
+
+Dana H\"agg, \emph{University of Calgary}
+
+\newpage
+
+% title
+
+\vspace*{100pt}
+
+\begin{raggedleft}
+
+{\fontsize{24pt}{24pt}\selectfont\bfseries\sffamily%
+  Sets, Logic, Computation}
+
+\smallskip
+
+{\fontsize{18pt}{18pt}\selectfont\bfseries\itshape An Open Logic Text}
+
+\vspace{100pt}
+
+\fontsize{14pt}{14pt}\selectfont Remixed by Richard Zach
+
+\vfill
+
+\textsc{winter 2016}
 
 \end{raggedleft}
+
+
+\newpage
+
+% copyright
+
+\noindent
+The Open Logic Project would like to acknowledge the generous support
+of the Faculty of Arts of the University of Calgary and the Alberta
+OER Initiative.
+
+\bigskip
+
+\noindent\includegraphics[width=4cm]{aboer-color}
+
+\bigskip
+
+\noindent\includegraphics[width=5cm]{ucarts-color}
+
+\vfill
+
+\noindent Illustrations by \href{http://mattleadbeater.com}{Matthew
+  Leadbeater}, used under a
+\href{http://creativecommons.org/licenses/by-nc/4.0/}{Creative Commons
+  Attribution-NonCommercial 4.0 International License}.
+
+\vfill
+
+\noindent Typeset in Baskervald X and Universalis ADF Standard by
+\LaTeX.
 
 \vfill
 
@@ -49,23 +125,58 @@ Logic II
 % conditions of the CC-BY license used by the OLP, but you are not
 % required to license the product itself under CC-BY.
 
+\renewcommand{\ollicensefont}{\fontsize{9pt}{12pt}\selectfont}
+
+\noindent
 \oluselicense
 % Title of this version of the OLT with link to source
-{\href{https://github.com/rzach/phil379}{\textit{Logic II}}}
+{\href{https://github.com/rzach/phil379}{\textit{Sets, Logic,
+Computation}}}
 % Author of this version
 {\href{http://richardzach.org/}{Richard Zach}}
-\end{titlingpage}
 
-\frontmatter
-\pagestyle{ruled}
-
+\newpage
+\pagestyle{leadbeater}
+\currentpdfbookmark{Table of Contents}{name}
 \tableofcontents*
+
+\cleartoverso
+\thispagestyle{empty}
+\ \vfill
+\noindent\hskip-1cm\includegraphics{illustrations/SkolemChapter}
+\vfill
+
+\include{preface}
+
+\cleartoverso 
+
+
+\thispagestyle{empty}
+\ \vfill
+\noindent\hskip-1cm\includegraphics{illustrations/CantorChapter}
+\vfill
 
 \mainmatter
 
+\pagestyle{leadbeater}
+
 \olimport*[sets-functions-relations]{sets-functions-relations}
 
+\cleartoverso
+\ifodd\value{page}\stepcounter{page}\fi
+\thispagestyle{empty}
+\ \vfill
+\noindent\hskip-1cm\includegraphics{illustrations/GodelChapter}
+\vfill
+
 \olimport*[first-order-logic]{first-order-logic}
+
+\cleartoverso
+\ifodd\value{page}\stepcounter{page}\fi
+\thispagestyle{empty}
+\ \vfill
+\noindent\hskip-1cm\includegraphics{illustrations/TuringChapter}
+\vfill
 
 \olimport*[turing-machines]{turing-machines}
 
@@ -75,11 +186,35 @@ Logic II
 % the end of each chapter, delete this part and put
 % \problemsperchapter in the preamble
 
-\backmatter
+\cleartoverso
+\ifodd\value{page}\stepcounter{page}\fi
+\thispagestyle{empty}
+\ \vfill
+\noindent\hskip-1cm\includegraphics{illustrations/NoetherChapter}
+\vfill
+
+\appendix
+
+\olimport{induction}
+\def\captionnamefont{\sffamily\color{leadbeater}}
+\def\captiontitlefont{\sffamily\color{leadbeater}}
+
+\def\figurename{Fig.}
+\setlength{\olphotowidth}{.45\textwidth}
+
+\olimport*[history/biographies]{biographies}
 
 \chapter{Problems}
 
+\label{problems}
+
 \printproblems
 
-\end{document}
+\backmatter
 
+\photocredits
+
+\bibliographystyle{\olpath/bib/natbib-oup}
+\bibliography{\olpath/bib/open-logic.bib}
+
+\olimport*{\olpath/content/open-logic-about}

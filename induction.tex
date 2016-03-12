@@ -1,0 +1,341 @@
+% Part: methods
+% Chapter: methods 
+% Section: induction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\chapter{Induction}
+
+\label{induction}
+
+Induction is an important proof technique which is used, in different
+forms, in almost all areas of logic, theoretical computer science, and
+mathematics.  It is needed to prove many of the results in this book.
+
+\section{Induction on~$\Nat$}
+
+In its simplest form, induction is a technique used to prove results
+for all natural numbers. It uses the fact that by starting from $0$
+and repeatedly adding~$1$ we eventually reach every natural number.  So
+to prove that something is true for every number, we can (1) establish
+that it is true for $0$ and (2) show that whenever a number has it,
+the next number has it too.  If we abbreviate ``number~$n$ has
+property $P$'' by $P(n)$, then a proof by induction that $P(n)$ for
+all $n \in \Nat$ consists of:
+\begin{enumerate}
+\item a proof of $P(0)$, and
+\item a proof that, for any~$n$, if $P(n)$ then $P(n+1)$.
+\end{enumerate}
+To make this crystal clear, suppose we have both (1) and (2).  Then
+(1) tells us that $P(0)$ is true.  If we also have (2), we know in
+particular that if $P(0)$ then $P(0+1)$, i.e., $P(1)$. (This follows
+from the general statement ``for any~$n$, if $P(n)$ then $P(n+1)$'' by
+putting~$0$ for~$n$.  So by modus ponens, we have that $P(1)$.  From
+(2) again, now taking $1$ for~$n$, we have: if $P(1)$ then $P(2)$.
+Since we've just established $P(1)$, by modus ponens, we
+have~$P(2)$. And so on.  For any number $k$, after doing this $k$
+steps, we eventually arrive at~$P(k)$.  So (1) and (2) together
+established~$P(k)$ for any $k \in \Nat$.
+
+Let's look at an example.  Suppose we want to find out how many
+different sums we can throw with $n$ dice.  Although it might seem
+silly, let's start with $0$ dice.  If you have no dice there's only one
+possible sum you can ``throw'': no dots at all, which sums to~$0$. So
+the number of different possible throws is~$1$. If you have only one
+die, i.e., $n=1$, there are six possible values, $1$ through~$6$. With
+two dice, we can throw any sum from $2$ through $12$, that's $11$
+possibilities.  With three dice, we can throw any number from $3$ to
+$18$, i.e., $16$ different possibilities.  $1$, $6$, $11$, $16$: looks
+like a pattern: maybe the answer is $5n+1$?  Of course, $5n+1$ is the
+maximum possible, because there are only $5n+1$ numbers between $n$,
+the lowest value you can throw with $n$ dice (all $1$'s) and $6n$, the
+highest you can throw (all $6$'s).
+
+\begin{thm}
+  With $n$ dice one can throw all $5n+1$ possible values between $n$
+  and $6n$.
+\end{thm}
+
+\begin{proof}
+To prove that this holds for any number of dice, we use induction: we
+prove, (1) that the number of different throws with $0$ dice
+is~$5\cdot0 + 1 = 1$, and (2) that if we can throw all $5n+1$ values
+between $n$ and $6n$ with $n$ dice, then with $n+1$ dice we can
+throw all $5(n+1)+1 = 5n+6$ possible values between $n+1$ and
+$6(n+1)$.  We've already established (1): If you have no dice,
+there's only one possible outcome: you throw all $0$ dice, and the
+number of dots visible is~$0$.
+
+Now let's see how many possible total values you can throw with $n+1$
+dice: we're going to show that it's all $5n+6$ different sums between
+$n+1$ and $6n+6$, assuming that you can throw all $5n+1$ different
+sums between $n$ and $6n$ with $n$~dice. This assumption is called the
+induction hypothesis.  So: assume that you can throw all $5n+1$
+different sums between $n$ and $6n$ with $n$~dice
+
+Suppose you have $n$ dice.  Each possible throw sums to some number
+between $n$ (all $n$ dice show $1$'s) and $6n$ (all $6$'s).  Now throw
+another die.  You get another number between $1$ and $6$.  If your
+total is less than $6n$ you could have thrown the same total with your
+original $n$ dice, by induction hypothesis.  Only the possible totals
+$6n+1$ through $6n+6$ are totals you couldn't have thrown with just
+$n$ dice---and these are new possible totals, which you'd get, e.g.,
+by throwing $n$ $6$'s plus whatever your new die shows. So there are
+$6$ new possible totals.  You can still throw any of the old totals,
+except one. With $n+1$ dice you can't roll just~$n$. But any other
+value you can throw with $n$ dice you can also throw with $n+1$ dice:
+just imagine one of your $n$ dice showed one eye fewer (and at least
+one of them must show at least a $2$) and your $(n+1)$st die shows
+a~$1$. With an additional die we lose only one possible
+total ($n$) and gain $6$ new possible totals ($6n+1$ through $6n+6$).
+So the number of possible totals with $n+1$ dice is $5n+1$, minus~$1$,
+plus~$6$, i.e., $5n+6$.  So we have proved that, assuming the number
+of totals we can throw with $n$ dice is $5n+1$, the number of totals
+we can throw with $n+1$ dice is $5n+6 = 5(n+1) + 1$.
+\end{proof}
+
+Very often we use induction when we want to prove something about a
+series of objects (numbers, sets, etc.) that is itself defined
+``inductively,'' i.e., by defining the $(n+1)$-st object in terms of
+the $n$-th.  For instance, we can define the sum~$s_n$ of the natural
+numbers up to~$n$ by
+\begin{align*}
+  s_0 = 0\\
+  s_{n+1} & = s_n + (n+1)
+\end{align*}
+This definition gives:
+\begin{align*}
+  s_0 & = 0,\\
+  s_1 & = s_0 + 1 & = 1,\\
+  s_2 & = s_1 + 2 & = 1 + 2 = 3\\
+  s_3 & = s_s + 3 & = 1 + 2 + 3 = 6, \text{ etc.}
+\end{align*}
+Now we can prove, b=y induction, that $s_n = n(n+1)/2$.
+
+\begin{prop}
+  $s_n = n(n+1)/2$.
+\end{prop}
+
+\begin{proof}
+  We have to prove (1) that $s_0 = 0\cdot(0 + 1)/2$ and (2) if $s_n =
+  n(n+1)/2$ then $s_{n+1} = (n+1)(n+2)/2$.  (1) is obvious. To prove
+  (2), we assume the inductive hypothesis: $s_n = n(n+1)/2$. Using it,
+  we have to show that $s_{n+1} = (n+1)(n+2)/2$.
+
+  What is $s_{n+1}$?  By the definition, $s_{n+1} = s_n + (n+1)$.  By
+  inductive hypothesis, $s_n = n(n+1)/2$. We can substitute this into
+  the previous equation, and then just need a bit of arithmetic of
+  fractions:
+  \begin{align*}
+    s_{n+1} & = \frac{n(n+1)}{2} + (n+1) = {}\\
+    & = \frac{n(n+1)}{2} + \frac{2(n+1)}{2} = {}\\
+    & = \frac{n(n+1) + 2(n+1)}{2} = {}\\
+    & = \frac{(n+2)(n+1)}{2}.
+  \end{align*}
+\end{proof}
+
+The important lesson here is that if you're proving something about
+some inductively defined sequence $a_n$, induction is the obvious way
+to go. And even if it isn't (as in the case of the possibilities of
+dice throws), you can use induction if you can somehow relate the case
+for~$n+1$ to the case for~$n$.
+
+\section{Strong Induction}
+
+In the principle of induction discussed above, we prove $P(0)$ and
+also if $P(n)$, then $P(n+1)$.  In the second part, we assume that
+$P(n)$ is true and use this assumption to prove $P(n+1)$.
+Equivalently, of course, we could assume $P(n-1)$ and use it to prove
+$P(n)$---the important part is that we be able to carry out the
+inference from any number to its successor; that we can prove the
+claim in question for any number under the assumption it holds for its
+predecessor.
+
+There is a variant of the principle of induction in which we don't
+just assume that the claim holds for the predecessor $n-1$ of $n$, but
+for all numbers smaller than~$n$, and use this assumption to establish
+the claim for~$n$. This also gives us the claim $P(k)$ for all~$k \in
+\Nat$.  For once we have established $P(0)$, we have thereby
+established that $P$ holds for all numbers less than~$1$.  And if we
+know that if $P(l)$ for all $l<n$ then $P(n)$, we know this in
+particular for $n=1$.  So we can conclude $P(2)$.  With this we have
+proved $P(0)$, $P(1)$, $P(2)$, i.e., $P(l)$ for all $l<3$, and since
+we have also the conditional, if $P(l)$ for all $l<3$, then $P(3)$, we
+can conclude~$P(3)$, and so on.
+
+In fact, if we can establish the general conditional ``for all $n$, if
+$P(l)$ for all $l<n$, then $P(n)$,'' we do not have to establish
+$P(0)$ anymore, since it follows from it.  For remember that a general
+claim like ``for all $l<n$, $P(l)$'' is true if there are no $l<n$.
+This is a case of vacuous quantification: ``all $A$s are $B$s'' is
+true if there are no $A$s, $\lforall[x][(!A(x) \lif !B(x))]$ is true
+if no $x$ satisfies~$!A(x)$. In this case, the formalized version
+would be ``$\lforall[l][(l < n \lif P(l))]$''---and that is true if
+there are no $l < n$.  And if $n=0$ that's exactly the case: no $l<0$,
+hence ``for all $l<0$, $P(0)$'' is true, whatever $P$ is.  A proof of
+``if $P(l)$ for all $l<n$, then $P(n)$'' thus automatically
+establishes~$P(0)$.
+
+This variant is useful if establishing the claim for~$n$ can't be made
+to just rely on the claim for $n-1$ but may require the assumption
+that it is true for one or more $l<n$.  
+
+\section{Inductive Definitions}
+
+In logic we very often define kinds of objects \emph{inductively},
+i.e., by specifying rules for what counts as an object of the kind to
+be defined which explain how to get new objects of that kind from old
+objects of that kind.  For instance, we often define special kinds of
+sequences of symbols, such as the terms and !!{formula}s of a
+language, by induction.  For a simpler example, consider strings of
+parentheses, such as ``(()('' or ``()(())''.  In the second string,
+the parentheses ``balance,'' in the first one, they don't.  The
+shortest such expression is ``()''. Actually, the very shortest string
+of parentheses in which every opening parenthesis has a matching
+closing parenthesis is ``'', i.e., the empty sequence~$\emptyseq$.  If
+we already have a parenthesis expression~$p$, then putting matching
+parentheses around it makes another balanced parenthesis
+expression. And if $p$ and $p'$ are two balanced parentheses
+expressions, writing one after the other, ``$pp'$'' is also a balanced
+parenthesis expression.  In fact, any sequence of balanced parentheses
+can be generated in this way, and we might use these operations to
+\emph{define} the set of such expressions.  This is an \emph{inductive
+  definition}.
+
+\begin{defn}
+  The set of \emph{parexpressions} is inductively defined as follows:
+  \begin{enumerate}
+  \item $\emptyseq$ is a parexpression.
+  \item If $p$ is a parexpression, then so is $(p)$.
+  \item If $p$ and $p'$ are parexpressions $\neq \emptyseq$, then so
+    is $pp'$.
+  \item Nothing else is a parexpression.
+  \end{enumerate}
+\end{defn}
+
+(Note that we have not yet proved that every balanced parenthesis
+expression is a parexpression, although it is quite clear that every
+parexpression is a balanced parenthesis expression.)
+
+The key feature of inductive definitions is that if you want to prove
+something about all parexpressions, the definition tells you which
+cases you must consider.  For instance, if you are told that $q$ is a
+parexpression, the inductive definition tells you what $q$ can look
+like: $q$ can be $\emptyseq$, it can be $(p)$ for some other
+parexpression~$p$, or it can be $pp'$ for two parexpressions~$p$ and
+$p' \neq \emptyseq$. Because of clause (4), those are all the
+possibilities.
+
+When proving claims about all of an inductively defined set, the
+strong form of induction becomes particularly important. For instance,
+suppose we want to prove that for every parexpression of length~$n$,
+the number of $($ in it is~$n/2$.  This can be seen as a claim about
+all~$n$: for every $n$, the number of $($ in any parexpression of
+length~$n$ is $n/2$.
+
+\begin{prop}
+  For any $n$, the number of $($ in a parexpression of length~$n$ is
+  $n/2$.
+\end{prop}
+
+\begin{proof}
+To prove this result by (strong) induction, we have to show that the
+following conditional claim is true:
+\begin{quote}
+  If for every $k < n$, any parexpression of length $k$ has $k/2$
+  $($'s, then any parexpression of length~$n$ has $n/2$ $($'s.
+\end{quote}
+To show this conditional, assume that its antecedent is true, i.e.,
+assume that for any $k<n$, parexpressions of length $k$ contain $k$
+$($'s.  We call this assumption the inductive hypothesis. We want to
+show the same is true for parexpressions of length~$n$.
+
+So suppose $q$ is a parexpression of length~$n$.  Because
+parexpressions are inductively defined, we have three cases: (1) $q$
+is $\emptyseq$, (2) $q$ is $(p)$ for some parexpression~$p$, or (3)
+$q$ is $pp'$ for some parexpressions $p$ and $p' \neq \emptyseq$.
+\begin{enumerate}
+\item $q$ is $\emptyseq$.  Then $n = 0$, and the number of $($ in
+$q$ is also $0$. Since $0 = 0/2$, the claim holds.
+\item $q$ is $(p)$ for some parexpression~$p$.  Since $q$ contains two
+  more symbols than $p$, $\len{p} = n - 2$, in particular, $\len{p} <
+  n$, so the inductive hypothesis applies: the number of $($ in $p$ is
+  $\len{p}/2$. The number of $($ in $q$ is $1 + {}$ the number of $($
+  in $p$, so $= 1 + \len{p}/2$, and since $\len{p} = n - 2$, this
+  gives $1 + (n-2)/2 = n/2$.
+\item $q$ is $pp'$ for some parexpression~$p$ and $p' \neq \emptyseq$.
+  Since neither $p$ nor $p' =\emptyseq$, both $\len{p}$ and $\len{p'}
+  < n$. Thus the inductive hypothesis applies in each case: The number
+  of $($ in $p$ is $\len{p}/2$, and the number of $($ in $p'$ is
+  $\len{p'}/2$.  On the other hand, the number of $($ in $q$ is
+  obviously the sum of the numbers of $($ in $p$ and $p'$, since $q =
+  pp'$.  Hence, the number of $($ in $q$ is $\len{p}/2 + \len{p'}/2 =
+  (\len{p}+\len{p'})/2 = \len{pp'}/2 = n/2$.
+\end{enumerate}
+In each case, we've shown that teh number of $($ in $q$ is $n/2$ (on
+the basis of the inductive hypothesis). By strong induction, the
+proposition follows.
+\end{proof}
+
+\section{Structural Induction}
+
+So far we have used induction to establish results about all natural
+numbers. But a corresponding principle can be used directly to prove
+results about all !!{element}s of an inductively defined set.  This
+often called \emph{structural} induction, because it depends on the
+structure of the inductively defined objects.
+
+Generally, an inductive definition is given by (a) a list of
+``initial'' !!{element}s of the set and (b) a list of operations which
+produce new !!{element}s of the set from old ones. In the case of
+parexpressions, for instance, the initial object is~$\emptyseq$ and
+the operations are
+\begin{align*}
+  o_1(p) = & (p) \\
+  o_2(q, q') = & qq'
+\end{align*}
+You can even think of the natural numbers~$\Nat$ themselves as being
+given be an inductive definition: the initial object is~$0$, and the
+operation is the successor function~$x + 1$.
+
+In order to prove something about all elements of an inductively
+defined set, i.e., that every !!{element} of the set has a
+property~$P$, we must:
+\begin{enumerate}
+\item Prove that the initial objects have~$P$
+\item Prove that for each operation~$o$, if the arguments have~$P$,
+  so does the result.
+\end{enumerate}
+For instance, in order to prove something about all parexpressions, we
+would prove that it is true about $\emptyseq$, that it is true of
+$(p)$ provided it is true of $p$, and that it is true about $qq'$
+provided it is true of $q$ and $q'$ individually.
+
+\begin{prop}
+  The number of $($ equals the number of $)$ in any parexpression $p$.
+\end{prop}
+
+\begin{proof}
+We use structural induction.  Parexpressions are inductively defined,
+with initial object $\emptyseq$ and the operations $o_1$ and $o_2$.
+\begin{enumerate}
+\item The claim is true for $\emptyset$, since the number of $($ in
+  $\emptyseq = 0$ and the number of $)$ in $\emptyseq$ also $= 0$.
+\item Suppose the number of $($ in $p$ equals the number of $)$ in
+  $p$. We have to show that this is also true for $(p)$, i.e.,
+  $o_1(p)$.  But the number of $($ in $(p)$ is $1 + {}$ the number of
+  $($ in $p$.  And the number of $)$ in $(p)$ is $1 + {}$ the number
+  of $)$ in $p$, so the claim also holds for $(p)$.
+\item Suppose the number of $($ in $q$ equals the number of $)$, and
+  the same is true for $q'$. The number of $($ in $o_2(p, p')$, i.e.,
+  in $pp'$, is the sum of the number $($ in $p$ and $p'$. The number
+  of $)$ in $o_2(p, p')$, i.e., in $pp'$, is the sum of the number of
+  $)$ in $p$ and $p'$. The number of $($ in $o_2(p, p')$ equals the
+  number of $)$ in $o_2(p,p')$.
+\end{enumerate}
+The result follows by structural induction.
+\end{proof}
+
+\end{document}
