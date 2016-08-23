@@ -9,7 +9,9 @@
 
 \documentclass[11pt,openany]{memoir}
 
-\RequirePackage{amsthm,shadethm}
+\RequirePackage{amsthm}
+\RequirePackage{xcolor}
+\RequirePackage{mdframed}
 \RequirePackage[full]{textcomp}
 
 % let's set the whole thing in Baskervald X, with Universalis ADF
@@ -25,32 +27,12 @@
 
 \def\copyright{\textcircled{C}}
 
-% \olpath has to point to the location of the OLP main
-% directory/folder.  We're compiling from subdirectory
-% courses/phil379/, so the main directory is two
-% levels up.
-
-\newcommand{\olpath}{../../}
-
 \def\oljobname{phil379}
-
-% load all the Open Logic definitions. This will also load the
-% local definitions in open-logic-sample-config.sty
-
-\input{\olpath/sty/open-logic.sty}
-
-% colors for links
-
-\hypersetup{linkcolor=dkleadbeater,citecolor=dkleadbeater}
 
 % next line needed for Adobe Acrobat to open the PDF.  may have
 % somethign to do with transparency in the PNG graphics files?
 
 \pdfminorversion=4
-
-% we want all the problems deferred to the very end
-
-\input{\olpath/sty/open-logic-defer.sty}
 
 % load textpos for the cover
 
@@ -123,11 +105,30 @@
 
 \usepackage{atbegshi}  % to kill the blank page after the titling page
 
-\setlength\shadeboxsep{6pt} 
-\setlength\shadedtextwidth\textwidth
-\advance\shadedtextwidth-22pt
-
 \usepackage[font={small,it}]{caption}
+
+
+% \olpath has to point to the location of the OLP main
+% directory/folder.  We're compiling from subdirectory
+% courses/phil379/, so the main directory is two
+% levels up.
+
+\newcommand{\olpath}{../../}
+
+% load all the Open Logic definitions. This will also load the
+% local definitions in open-logic-sample-config.sty
+
+\input{\olpath/sty/open-logic.sty}
+
+% we want all the problems deferred to the very end
+
+\input{\olpath/sty/open-logic-defer.sty}
+
+% colors for links
+
+\hypersetup{linkcolor=dkleadbeater,citecolor=dkleadbeater}
+
+% end preamble
 
 \begin{document}
 

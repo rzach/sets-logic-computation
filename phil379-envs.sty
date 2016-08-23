@@ -28,10 +28,39 @@
 % adjust their definitions. Refer to the [`thmtools`
 % documentation](http://www.ctan.org/pkg/thmtools).
 
+% theorem styling
+
+\newlength{\thmwidth}
+\setlength{\thmwidth}{16pt}
+\addtolength{\thmwidth}{\textwidth}
+
+\mdfdefinestyle{thmstyle}{backgroundcolor=ltleadbeater,
+  innerleftmargin=8pt,
+  innertopmargin=0pt,
+  innerrightmargin=8pt,
+  userdefinedwidth=\thmwidth,
+  needspace=3cm,
+  splittopskip=2\topsep,
+  hidealllines=true,
+  beforesingleframe={\hskip-8pt},
+  beforebreak={\hskip-8pt}
+} 
+
+\mdfdefinestyle{defstyle}{linecolor=ltleadbeater,
+  linewidth=2pt,
+  innerleftmargin=6pt,
+  innertopmargin=-2pt,
+  innerrightmargin=6pt,
+  userdefinedwidth=\thmwidth,
+  needspace=3cm,
+  beforesingleframe={\hskip-8pt},
+  beforebreak={\hskip-8pt}
+} 
+
 \declaretheorem[
   style=plain,
   name=Theorem,
-  shaded={bgcolor=ltleadbeater,leftmargin=-8pt,margin=8pt},
+  mdframed={style=thmstyle},
   numberwithin=chapter]{thm}
 
 \declaretheorem[
@@ -42,27 +71,27 @@
 \declaretheorem[
   style=plain,
   name=Lemma,
-  shaded={bgcolor=ltleadbeater,leftmargin=-8pt,margin=8pt},
+  mdframed={style=thmstyle},
   refname={Lemma,Lemmata},
   sibling=thm]{lem}
 
 \declaretheorem[
   style=plain,
   name=Proposition,
-  shaded={bgcolor=ltleadbeater,leftmargin=-8pt,margin=8pt},
+  mdframed={style=thmstyle},
   sibling=thm]{prop}
 
 \declaretheorem[
   style=plain,
   name=Corollary,
-  shaded={bgcolor=ltleadbeater,leftmargin=-8pt,margin=8pt},
+  mdframed={style=thmstyle},
   refname={Corollary,Corollaries},
   sibling=thm]{cor}
 
 \declaretheorem[
   style=definition,
   name=Definition,
-%  shaded={rulecolor=ltleadbeater,rulewidth=3pt,bgcolor=white,leftmargin=-8pt,margin=5pt},
+  mdframed={style=defstyle},
   sibling=thm]{defn}
 
 \declaretheorem[
