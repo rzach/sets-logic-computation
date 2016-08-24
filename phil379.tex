@@ -2,6 +2,8 @@
 %
 % driver file phil379.tex to produce text
 
+\problemsperchapter
+
 \frontmatter
 
 % bastard title
@@ -192,9 +194,7 @@ Computation}}}
 
 \stopproblems
 
-% now typeset all the problems as an appendix. If you want problems at
-% the end of each chapter, delete this part and put
-% \problemsperchapter in the preamble
+% appendices
 
 \cleartoverso
 \ifodd\value{page}\stepcounter{page}\fi
@@ -214,12 +214,6 @@ Computation}}}
 \setlength{\olphotowidth}{.45\textwidth}
 
 \olimport*[history/biographies]{biographies}
-
-\chapter{Problems}
-
-\label{problems}
-
-\printproblems
 
 \backmatter
 
