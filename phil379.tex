@@ -192,8 +192,6 @@ Computation}}}
 
 \olimport*[turing-machines]{turing-machines}
 
-\stopproblems
-
 % appendices
 
 \cleartoverso
@@ -207,6 +205,9 @@ Computation}}}
 
 \olimport*[methods/induction]{induction}
 
+\stopproblems
+\def\ifproblems#1{}
+
 \def\captionnamefont{\sffamily\color{leadbeater}}
 \def\captiontitlefont{\sffamily\color{leadbeater}}
 
@@ -217,6 +218,10 @@ Computation}}}
 
 \backmatter
 
+\glsaddall
+\printglossaries
+
+\clearpage
 \photocredits
 
 \bibliographystyle{\olpath/bib/natbib-oup}
