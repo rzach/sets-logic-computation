@@ -2,6 +2,10 @@
 %
 % driver file phil379.tex to produce text
 
+\preto\OLEndChapterHook{\IfFileExists{include/summary-\thechapter}
+        {\section*{Summary}\addcontentsline{toc}{section}{Summary}
+        \let\emph\textbf\input{include/summary-\thechapter}\let\emph\textit}{}}
+
 \problemsperchapter
 
 \frontmatter
@@ -158,7 +162,7 @@ Computation}}}
 \noindent\hskip-1cm\includegraphics{illustrations/SkolemChapter}
 \vfill
 
-\include{preface}
+\include{include/preface}
 
 \cleartoverso 
 
@@ -218,7 +222,6 @@ Computation}}}
 
 \backmatter
 
-\glsaddall
 \printglossaries
 
 \clearpage

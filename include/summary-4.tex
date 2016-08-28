@@ -1,0 +1,33 @@
+The size of a set~$X$ can be measured by a natural number if the set
+is finite, and sizes can be compared by comparing their sizes. If sets
+are infinite, things are more complicated.  The first level of
+infinity is that of \emph{countably infinite} sets. A set~$X$ is
+countable if its elements can be arranged in an \emph{enumeration}, a
+one-way infinite, possibly gappy list, i.e., when there is a
+surjective function~$f\colon \Int^+ \pto X$. It is countably infinite
+if it is countable but not finite. Cantor's \emph{zig-zag method}
+shows that the sets of pairs of elements of countably infinite sets is
+also countable; and this can be used to show that even the set of
+rational numbers~$\Rat$ is countable.
+
+There are, however, infinite sets that are not countable: these sets
+are called \emph{uncountable}. There are two ways of showing that a
+set is uncountable: directly, using a \emph{diagonal argument}, or by
+\emph{reduction}. To give a diagonal argument, we assume that the
+set~$X$ in question is countable, and use a hypothetical enumeration
+to define an element of~$X$ which, by the very way we define it, is
+guaranteed to be differnt from every element in the enumeration. So
+the enumeration can't be an enumeration of all of~$X$ after all, and
+we've shown that no enumeration of~$X$ can exist.  A reduction shows
+that $X$ is uncountable by associating every element of some known
+uncountable set~$Y$ with an element of~$X$ in a bijective way. If this
+is possible, than a hypothetical enumeration of $X$ would yieled an
+enumeration of~$Y$. Since $Y$ is uncountable, no enumeration of~$X$
+can exist.
+
+In general, infinite sets can be compared sizewise: $X$ and $Y$ are
+the same size, or \emph{equinumerous}, if there is a bijection between
+them. We can also define that $X$ is no larger than~$Y$ ($\card{X} \le
+\card{Y}$) if there is an injective function from $X$ to
+$Y$. \emph{Cantor's theorem} says that for any $X$, $\card{X} <
+\card{\Pow{X}}$.
