@@ -1,9 +1,23 @@
+\newglossaryentry{dtheorem}{
+  name = {deduction theorem},
+  description = {Relates entailment and provability of a sentence from
+    an assumption with that of a corresponding conditional. In the
+    semantic form (\olref[fol][syn][sem]{thm:sem-deduction}), it states
+    that $\Gamma \cup \{!A\} \Entails !B$ iff $\Gamma \Entails !A \lif
+    !B$. In the proof-theoretic form, it states that $\Gamma \cup
+   \{!A\} \Proves !B$ iff $\Gamma \Proves !A \lif !B$}}
 
-\newglossaryentry{extensionality} {
-  name=extensionality,  
+\newglossaryentry{set-extensionality} {
+  name={extensionality (of sets)},  
   description={Sets $X$ and~$Y$ are identical, $X = Y$, iff every
     element of~$X$ is also an element of~$Y$, and vice versa
-    (see \olref[sfr][set][bas]{sec})} }
+    (see \olref[sfr][set][bas]{sec})}}
+
+\newglossaryentry{sat-extensionality}{
+        name = {extensionality (of satisfaction)},
+        description = {Whether or not a formula~$!A$ is satisfied
+        depends only on the assignments to the non-logical symbols and
+        free variables that actually occur in~$!A$}}
 
 \newglossaryentry{set} {
   name=set,  
@@ -273,7 +287,7 @@
   name={theorem},
   symbol = {\ensuremath{\Proves !A}},
   description={A {formula}~$!A$ is a theorem (of logic) if there is
-    a {derivation} of $!A$ with all assumptions discharged; or a
+    a {derivation} of $!A$ with all assumptions \gls{discharged}; or a
     theorem of~$\Gamma$ if $\Gamma \Proves !A$ (see
     \olref[fol][ntd][ptn]{sec})} }
 
@@ -352,7 +366,7 @@
     \olref[fol][syn][sub]{sec})} }
 
 \newglossaryentry{church-turing thesis} {
-  name=Church-Turing thesis,
+  name=Church-Turing Thesis,
   description={states that anything computable via an effective
     procedure is Turing computable (see \olref[tur][mac][ctt]{sec})} }
 
@@ -431,3 +445,28 @@
   name = {completeness theorem},  
   description = {States that first-order logic is complete: every
     \gls{consistent} set of sentences is \gls{satisfiable}}}
+
+\newglossaryentry{eigenvariable}{
+  name = eigenvariable,  
+  description = {A special constant symbol in a premise of a
+    $\Elim{\lexists}$ or $\Intro{\lforall}$ inference which may not
+    appear in the conclusion or any \gls{undischarged} (see
+    \olref[fol][ntd][rul]{sec})}}
+
+\newglossaryentry{discharged}{
+  name = {discharged},
+  description = {An \gls{assumption} in a derivation may be discharged
+    by an inference rule below it (the rule and the assumption are
+    then assigned a matching label, e.g., $[!A]^2$). If it is not
+    discharged, it is called undischarged (see \olref[fol][ntd][rul]{sec})}}
+
+\newglossaryentry{undischarged}{
+  name = {undischarged},
+  description = {see \gls{discharged}}}
+
+\newglossaryentry{assumption}{
+  name = {assumption},
+  description = {A formula that stands topmost in a derivation, also
+    called an initial formula. It may be \gls{discharged} or
+    undischarged (see \olref[fol][ntd][rul]{sec})}}
+

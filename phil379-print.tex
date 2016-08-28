@@ -13,8 +13,9 @@
 \RequirePackage[usetwoside=false]{mdframed}
 \RequirePackage[full]{textcomp}
 
+\RequirePackage[pdftex,breaklinks,bookmarks,bookmarksopen,bookmarksopenlevel=1,colorlinks,urlcolor=dark-gray,linkcolor=reflex-blue]{hyperref}
+
 \usepackage[nonumberlist,toc,style=index]{glossaries}
-\loadglsentries{glossary}
 \makeglossaries
 
 % let's set the whole thing in Baskervald X, with Universalis ADF
@@ -127,6 +128,10 @@
 % all links plain black for printing
 
 \hypersetup{hidelinks}
+
+% load glossary entries
+
+\loadglsentries{include/glossary}
 
 % end preamble           
 

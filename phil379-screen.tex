@@ -14,9 +14,11 @@
 \RequirePackage{mdframed}
 \RequirePackage[full]{textcomp}
 
+\RequirePackage[pdftex,breaklinks,bookmarks,bookmarksopen,bookmarksopenlevel=1,colorlinks,urlcolor=dark-gray,linkcolor=reflex-blue]{hyperref}
+
 \usepackage[nonumberlist,toc,style=index]{glossaries}
 \makeglossaries
-\loadglsentries{glossary}
+
 
 % let's set the whole thing in Baskervald X, with Universalis ADF
 % Standard for sans-serif, and spread the lines a bit to make the text
@@ -137,6 +139,10 @@
   pdftitle={Sets, Logic, Computation},
   pdfauthor = {Open Logic Project}
 }
+
+% load glossary entries
+
+\loadglsentries{include/glossary}
 
 % end preamble
 
