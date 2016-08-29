@@ -1,6 +1,10 @@
-% cover-lulu-royal.tex
-%
+% cover-lulu-quarto.tex
+
 % make a cover PDF for lulu.com's Crown Quarto booksize.
+
+% note: Lulu will flatten this PDF and get the colors wrong. Convert
+% this PDF to PNG first (eg, using GIMP: just import at 300dpi then
+% export as PNG).
 
 \documentclass{memoir}
 \usepackage[sfdefault]{universalis}
@@ -15,7 +19,7 @@
 \definecolor{leadbeater}{RGB}{248,154,14}
 
 % lulu.com's instructions:
-% Spine width: 37.622 Postscript points wide (1.327 cm) (157 px)
+% Spine width: 44.108 Postscript points wide (1.556 cm) (184 px)
 % Spine begins 545 Postscript points (19.224 cm) (2271 px) from the left.
 % Total cover width: 1127.622 X 715 Postscript points (39.775 cm X 25.220 cm) (4698px X 2979px)
 
@@ -26,8 +30,8 @@
 \newlength{\coverpos} % front cover starts here, width = \spinepos
 
 \setlength{\coverheight}{715bp}
-\setlength{\coverwidth}{1127.622bp}
-\setlength{\spinewidth}{37.622bp}
+\setlength{\coverwidth}{1134.108bp}
+\setlength{\spinewidth}{44.108bp}
 \setlength{\spinepos}{545bp}
 
 % \coverpos = \spinepso + \spinewidth
