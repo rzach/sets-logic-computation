@@ -6,7 +6,9 @@ Textbook for Calgary's Logic II course based on the Open Logic Project.
 This repository/directory only contains the LaTeX files and
 illustrations needed to typeset the textbook _Sets, Logic,
 Computation_, which in turn requires the _[Open Logic
-Text](http://github.com/OpenLogicProject/OpenLogic/)_
+Text](http://github.com/OpenLogicProject/OpenLogic/)_.
+
+You can download the PDF of the [screen version](http://people.ucalgary.ca/~rzach/static/open-logic/courses/phil379/phil379-screen.pdf) or the [print version](http://people.ucalgary.ca/~rzach/static/open-logic/courses/phil379/phil379-print.pdf).
 
 To install and compile:
 
@@ -41,7 +43,7 @@ there.
 
 [![Creative Commons License](http://mirrors.creativecommons.org/presskit/buttons/88x31/png/by.png)](http://creativecommons.org/licenses/by/4.0/) 
 
-_[Logic II](https://github.com/rzach/phil379/)_ by [Richard
+_[Sets, Logic, Computation](https://github.com/rzach/phil379/)_ by [Richard
 Zach](http://richardzach.org/) is licensed under a [Creative
 Commons Attribution 4.0 International
 License](http://creativecommons.org/licenses/by/4.0/).
