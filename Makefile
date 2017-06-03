@@ -13,8 +13,12 @@
 
 all: phil379-screen.pdf phil379-print.pdf
 
-%.pdf : %.tex FORCE_MAKE
+%.pdf : %.tex olprevision.tex FORCE_MAKE
 	latexmk -pdf -dvi- -ps- $<
 
 clean:	
 	latexmk -c phil379-screen.tex phil379-print.tex
+
+olprevision.tex: FORCE_MAKE
+	grep shash ../../.git/gitHeadInfo.gin |sed 's/[^{]*{\([^}]*\)},/\1/' > olprevision.tex
+	grep authsdate ../../.git/gitHeadInfo.gin |sed 's/[^{]*{\([^}]*\)},/(\1)./' >> olprevision.tex

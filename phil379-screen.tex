@@ -13,6 +13,7 @@
 \RequirePackage{xcolor}
 \RequirePackage{mdframed}
 \RequirePackage[full]{textcomp}
+\RequirePackage{gitinfo2}
 
 \RequirePackage[pdftex,breaklinks,bookmarks,bookmarksopen,bookmarksopenlevel=1,colorlinks,urlcolor=dark-gray,linkcolor=reflex-blue]{hyperref}
 
@@ -80,8 +81,8 @@
   \setlength{\beforechapskip}{50pt}
     \setlength{\midchapskip}{10pt}
   \renewcommand*{\afterchapternum}{\par\nobreak\vskip 0pt}
-  \renewcommand*{\chapnamefont}{\fontsize{14pt}{0pt}\selectfont\bfseries\sffamily}
-  \renewcommand*{\chapnumfont}{\fontsize{14pt}{0pt}\selectfont\bfseries\sffamily}
+  \renewcommand*{\chapnamefont}{\fontsize{14pt}{0pt}\selectfont\sffamily\bfseries}
+  \renewcommand*{\chapnumfont}{\fontsize{14pt}{0pt}\selectfont\sffamily\bfseries}
   \renewcommand*{\chaptitlefont}{\normalfont\fontsize{48pt}{48pt}\selectfont\bfseries\itshape\color{leadbeater}}
   \renewcommand*{\printchaptername}{%
     \chapnamefont\MakeUppercase{\@chapapp}}
@@ -91,8 +92,8 @@
     \smash{\color{leadbeater}\rule{7pt}{300pt}}}
 }
 
-\renewcommand*{\partnamefont}{\fontsize{24pt}{0pt}\selectfont\bfseries\sffamily}
-\renewcommand*{\partnumfont}{\fontsize{24pt}{0pt}\selectfont\bfseries\sffamily}
+\renewcommand*{\partnamefont}{\fontsize{24pt}{0pt}\selectfont\sffamily\bfseries}
+\renewcommand*{\partnumfont}{\fontsize{24pt}{0pt}\selectfont\sffamily\bfseries}
 \renewcommand*{\parttitlefont}{\normalfont\fontsize{54pt}{54pt}\selectfont\bfseries\itshape\color{leadbeater}}
 \renewcommand*{\printpartname}{%
   \partnamefont PART}
@@ -108,8 +109,6 @@
 
 \makeevenhead{leadbeater}{\small\sffamily\color{leadbeater}\leftmark}{}
             {\color{leadbeater}\sffamily\bfseries\thepage}
-
-\usepackage{atbegshi}  % to kill the blank page after the titling page
 
 \usepackage[font={small,it}]{caption}
 
@@ -150,10 +149,8 @@
 
 % First we make a titlepage
 
-\AtBeginShipoutNext{\AtBeginShipoutNext{\AtBeginShipoutDiscard}}
-% gets rid of empty page after title page
+\thispagestyle{empty}
 
-\begin{titlingpage}
   \pagecolor{leadbeater}
   \begin{textblock*}{14cm}(2cm,2cm)%
     \begin{raggedright}
@@ -172,8 +169,9 @@
 \hfill Winter 2017 %\textit{bis}
 \end{textblock*}
 \
-\end{titlingpage}
 
+\clearpage
+\setcounter{page}{1}
 \nopagecolor
 
 % Now load the actual text
