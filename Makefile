@@ -11,13 +11,13 @@
 
 .PHONY : FORCE_MAKE
 
-all: phil379-screen.pdf phil379-print.pdf
+all: phil379-screen.pdf phil379-print.pdf phil379-screen-lk.pdf 
 
 %.pdf : %.tex olprevision.tex FORCE_MAKE
 	latexmk -pdf -dvi- -ps- $<
 
 clean:	
-	latexmk -c phil379-screen.tex phil379-print.tex
+	latexmk -c phil379-screen.tex phil379-print.tex phil379-screen-lk.pdf 
 
 olprevision.tex: FORCE_MAKE
 	grep shash ../../.git/gitHeadInfo.gin |sed 's/[^{]*{\([^}]*\)},/\1/' > olprevision.tex
