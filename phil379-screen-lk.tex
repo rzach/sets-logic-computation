@@ -1,7 +1,8 @@
-% phil379-print.tex
-%
-% driver file phil379-screen.tex to produce text on Crown Quarto
-% size but all b/w for printing, and no cover
+% phil379-screen.tex
+
+% driver file phil379-screen.tex to produce the Logic II textbook on
+% with same type block as in printed version, but but with on-screen
+% features (color, links, etc).
 
 % We use the memoir class for maximal flexibility of layout, but any
 % class will do
@@ -10,7 +11,7 @@
 
 \RequirePackage{amsthm}
 \RequirePackage{xcolor}
-\RequirePackage[usetwoside=false]{mdframed}
+\RequirePackage{mdframed}
 \RequirePackage[full]{textcomp}
 \RequirePackage{gitinfo2}
 
@@ -18,6 +19,7 @@
 
 \usepackage[nonumberlist,toc,style=index]{glossaries}
 \makeglossaries
+
 
 % let's set the whole thing in Baskervald X, with Universalis ADF
 % Standard for sans-serif, and spread the lines a bit to make the text
@@ -39,9 +41,13 @@
 
 \pdfminorversion=4
 
-% set stock & paper size to Lulu's Crown Quarto dimensions
+% load textpos for the cover
 
-\setstocksize{24.589cm}{18.91cm}
+\usepackage[absolute,overlay]{textpos}
+
+% set stock & paper size with narrow margins
+
+\setstocksize{22cm}{17cm}
 
 \settrimmedsize{\stockheight}{\stockwidth}{*}
 \settrims{0pt}{0pt}
@@ -56,8 +62,8 @@
 
 % set spine and and edge margin
 
-\setlrmargins{*}{*}{1.3}
-\setulmargins{90pt}{*}{*}
+\setlrmargins{*}{*}{1}
+\setulmargins{60pt}{*}{*}
 \setheaderspaces{*}{*}{1}
 
 \checkandfixthelayout
@@ -66,17 +72,17 @@
 
 \makeatletter
 
-\colorlet{leadbeater}{black}
-\colorlet{dkleadbeater}{black}
-\colorlet{ltleadbeater}{black!5}
+\definecolor{leadbeater}{RGB}{248,154,14}
+\definecolor{dkleadbeater}{RGB}{104,65,6}
+\definecolor{ltleadbeater}{RGB}{248,203,137}
 \newlength{\barlength}
 \makechapterstyle{leadbeater}{%
   \setlength{\afterchapskip}{40pt}
   \setlength{\beforechapskip}{50pt}
     \setlength{\midchapskip}{10pt}
   \renewcommand*{\afterchapternum}{\par\nobreak\vskip 0pt}
-  \renewcommand*{\chapnamefont}{\fontsize{14pt}{0pt}\selectfont\bfseries\sffamily}
-  \renewcommand*{\chapnumfont}{\fontsize{14pt}{0pt}\selectfont\bfseries\sffamily}
+  \renewcommand*{\chapnamefont}{\fontsize{14pt}{0pt}\selectfont\sffamily\bfseries}
+  \renewcommand*{\chapnumfont}{\fontsize{14pt}{0pt}\selectfont\sffamily\bfseries}
   \renewcommand*{\chaptitlefont}{\normalfont\fontsize{48pt}{48pt}\selectfont\bfseries\itshape\color{leadbeater}}
   \renewcommand*{\printchaptername}{%
     \chapnamefont\MakeUppercase{\@chapapp}}
@@ -86,8 +92,8 @@
     \smash{\color{leadbeater}\rule{7pt}{300pt}}}
 }
 
-\renewcommand*{\partnamefont}{\fontsize{24pt}{0pt}\selectfont\bfseries\sffamily}
-\renewcommand*{\partnumfont}{\fontsize{24pt}{0pt}\selectfont\bfseries\sffamily}
+\renewcommand*{\partnamefont}{\fontsize{24pt}{0pt}\selectfont\sffamily\bfseries}
+\renewcommand*{\partnumfont}{\fontsize{24pt}{0pt}\selectfont\sffamily\bfseries}
 \renewcommand*{\parttitlefont}{\normalfont\fontsize{54pt}{54pt}\selectfont\bfseries\itshape\color{leadbeater}}
 \renewcommand*{\printpartname}{%
   \partnamefont PART}
@@ -98,16 +104,17 @@
 
 \copypagestyle{leadbeater}{headings}
 
-\makeevenhead{leadbeater}{\color{leadbeater}\sffamily\bfseries\thepage}{}
-             {\small\sffamily\color{leadbeater}\leftmark}
 \makeoddhead{leadbeater}{\small\sffamily\color{leadbeater}\rightmark}{}
+            {\color{leadbeater}\sffamily\bfseries\thepage}
+
+\makeevenhead{leadbeater}{\small\sffamily\color{leadbeater}\leftmark}{}
             {\color{leadbeater}\sffamily\bfseries\thepage}
 
 \usepackage[font={small,it}]{caption}
 
 
 % \olpath has to point to the location of the OLP main
-% directory/folder.  We're compiling from subdirectory
+% directory/folder. We're compiling from subdirectory
 % courses/phil379/, so the main directory is two
 % levels up.
 
@@ -122,23 +129,55 @@
 
 \input{\olpath/sty/open-logic-defer.sty}
 
-% use high-res versions of photos
+% colors for links
 
-\tagfalse{olphotos-lowres}
-
-% all links plain black for printing
-
-\hypersetup{hidelinks}
+\hypersetup{
+  allcolors=dkleadbeater,
+%  citecolor=dkleadbeater,
+%  urlcolor=dkleadbeater,
+  pdftitle={Sets, Logic, Computation},
+  pdfauthor = {Open Logic Project}
+}
 
 % load glossary entries
 
 \loadglsentries{include/glossary}
 
-% end preamble           
+% end preamble
 
 \begin{document}
 
-% load the text
+% First we make a titlepage
+
+\thispagestyle{empty}
+
+  \pagecolor{leadbeater}
+  \begin{textblock*}{14cm}(2cm,2cm)%
+    \begin{raggedright}
+      \fontsize{32pt}{34pt}\selectfont\bfseries\sffamily%
+      Sets, Logic, Computation\\
+      \normalfont\fontsize{18pt}{0pt}\selectfont\bfseries\itshape%
+      \rule{14cm}{5pt}\\[5pt]
+      An Open Logic Text (LK Version)
+    \end{raggedright}
+
+\vskip1cm\hskip-1cm\includegraphics[scale=.85]{illustrations/Cover}
+
+\par\noindent
+\vskip 1.5cm
+\normalfont\fontsize{16pt}{0pt}\selectfont\bfseries\sffamily%
+\hfill Fall 2017 %\textit{bis}
+\end{textblock*}
+\
+
+\clearpage
+\setcounter{page}{1}
+\nopagecolor
+
+% Now load the actual text
+
+\tagtrue{prfSC}
+\tagfalse{prfND}
 
 \input{phil379}
 
