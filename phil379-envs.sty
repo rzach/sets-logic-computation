@@ -57,6 +57,17 @@
   beforebreak={\hskip-8pt}
 } 
 
+\mdfdefinestyle{defishstyle}{linecolor=ltleadbeater,
+  linewidth=2pt,
+  innerleftmargin=6pt,
+  innertopmargin=6pt,
+  innerrightmargin=6pt,
+  userdefinedwidth=\thmwidth,
+  needspace=1cm,
+  beforesingleframe={\hskip-8pt},
+  beforebreak={\hskip-8pt}
+} 
+
 \declaretheorem[
   style=plain,
   name=Theorem,
@@ -187,4 +198,8 @@
 \newenvironment{editorial}{\begin{framed}}{\end{framed}}
 
 \excludeenv{editorial} % exclude editorial remarks by default
+
+% - `defish`: for definition-like material, e.g., rules
+
+\newenvironment{defish}{\begin{mdframed}[style=defishstyle]\noindent}{\end{mdframed}}
 
