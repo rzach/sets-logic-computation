@@ -13,7 +13,7 @@ Computation_, which in turn requires the _[Open Logic
 Text](http://github.com/OpenLogicProject/OpenLogic/)_.
 
 You can [download the
-PDF](http://builds.openlogicproject.courses/phil379/phil379-screen.pdf)
+PDF](http://builds.openlogicproject.org/courses/phil379/phil379-screen.pdf)
 from the [Open Logic builds
 site](http://builds.openlogicproject.org/).
 
