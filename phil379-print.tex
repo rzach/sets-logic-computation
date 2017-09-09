@@ -39,12 +39,11 @@
 
 \pdfminorversion=4
 
-% set stock & paper size to Lulu's Crown Quarto dimensions
+% set stock & paper size to Createspace Crown Quarto dimensions (.25in bleed)
 
-\setstocksize{24.589cm}{18.91cm}
-
-\settrimmedsize{\stockheight}{\stockwidth}{*}
-\settrims{0pt}{0pt}
+\setstocksize{10.19in}{7.94in}
+\settrimmedsize{9.69in}{7.44in}{*}
+\settrims{.25in}{.25in}
 
 % let's calculate the line length for 65 characters in \normalfont
 
@@ -83,7 +82,7 @@
   \renewcommand*{\printchaptertitle}[1]{%
     \chaptitlefont ##1\\[-\baselineskip]%
     \hspace*{-20pt}%
-    \smash{\color{leadbeater}\rule{7pt}{300pt}}}
+    \smash{\color{leadbeater}\rule{7pt}{350pt}}}
 }
 
 \renewcommand*{\partnamefont}{\fontsize{24pt}{0pt}\selectfont\bfseries\sffamily}
