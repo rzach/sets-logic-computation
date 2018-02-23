@@ -30,12 +30,14 @@ To install and compile:
 If you use `git`, this should do it:
 ```
 # git clone https://github.com/OpenLogicProject/OpenLogic.git
+# cd assets
 # cd OpenLogic/courses
 # git clone https://github.com/rzach/phil379.git
+# cd ../assets
+# git clone https://github.com/OpenLogicProject/photos.git
 ```
 Inside `courses/phil379`, you can now compile:
 ```
-# cd phil379
 # pdflatex phil379-screen
 ```
 or just `# make` if you have `latexmk` installed. (You'll also have to
