@@ -15,12 +15,8 @@
 \RequirePackage[full]{textcomp}
 \RequirePackage{gitinfo2}
 
-\RequirePackage[pdftex,breaklinks,bookmarks,bookmarksopen,bookmarksopenlevel=1,colorlinks,urlcolor=dark-gray,linkcolor=reflex-blue]{hyperref}
-\usepackage[numbered]{bookmark}
-
 \usepackage[nonumberlist,toc,style=index]{glossaries}
 \makeglossaries
-
 
 % let's set the whole thing in Baskervald X, with Universalis ADF
 % Standard for sans-serif, and spread the lines a bit to make the text
@@ -49,7 +45,7 @@
 
 % set stock & paper size with narrow margins
 
-\setstocksize{22cm}{17cm}
+\setstocksize{8in}{5in}
 
 \settrimmedsize{\stockheight}{\stockwidth}{*}
 \settrims{0pt}{0pt}
@@ -65,7 +61,7 @@
 % set spine and and edge margin
 
 \setlrmargins{*}{*}{1}
-\setulmargins{60pt}{*}{*}
+\setulmargins{.6in}{*}{*}
 \setheaderspaces{*}{*}{1}
 
 \checkandfixthelayout
@@ -91,7 +87,7 @@
   \renewcommand*{\printchaptertitle}[1]{%
     \chaptitlefont ##1\\[-\baselineskip]%
     \hspace*{-20pt}%
-    \smash{\color{leadbeater}\rule{7pt}{300pt}}}
+    \smash{\color{leadbeater}\rule{0pt}{300pt}}}
 }
 
 \renewcommand*{\partnamefont}{\fontsize{24pt}{0pt}\selectfont\sffamily\bfseries}
@@ -127,19 +123,15 @@
 
 \input{\olpath/sty/open-logic.sty}
 
+\hypersetup{allcolors=dkleadbeater,
+  pdftitle={Sets, Logic, Computation},
+  pdfauthor = {Richard Zach, Open Logic Project}}
+
+\RequirePackage[numbered]{bookmark}
+
 % we want all the problems deferred to the very end
 
 \input{\olpath/sty/open-logic-defer.sty}
-
-% colors for links
-
-\hypersetup{
-  allcolors=dkleadbeater,
-%  citecolor=dkleadbeater,
-%  urlcolor=dkleadbeater,
-  pdftitle={Sets, Logic, Computation},
-  pdfauthor = {Richard Zach, Open Logic Project}
-}
 
 % load glossary entries
 
@@ -154,21 +146,27 @@
 \thispagestyle{empty}
 
   \pagecolor{leadbeater}
-  \begin{textblock*}{14cm}(2cm,2cm)%
+  \begin{textblock*}{4.5in}(.25in,.75in)%
     \begin{raggedright}
-      \fontsize{32pt}{34pt}\selectfont\bfseries\sffamily%
+      \fontsize{26pt}{30pt}\selectfont\bfseries\sffamily%
       Sets, Logic, Computation\\
       \normalfont\fontsize{18pt}{0pt}\selectfont\bfseries\itshape%
-      \rule{14cm}{5pt}\\[5pt]
+      \rule{4.5in}{5pt}\\[5pt]
       An Open Logic Text
+
+
+    \vskip1.5cm
+
+    \includegraphics[scale=.7]{illustrations/Cover}
+
+    \vskip 1.5cm
+    \noindent
+    \includegraphics[width=1cm]{assets/cc.pdf}
+    \includegraphics[width=1cm]{assets/by.pdf}
+    \includegraphics[width=1cm]{assets/remix.pdf}
+    \normalfont\fontsize{16pt}{0pt}\selectfont\bfseries\sffamily%
+    \hfill Fall 2017 \textit{bis}
     \end{raggedright}
-
-\vskip1cm\hskip-1cm\includegraphics[scale=.85]{illustrations/Cover}
-
-\par\noindent
-\vskip 1.5cm
-\normalfont\fontsize{16pt}{0pt}\selectfont\bfseries\sffamily%
-\hfill Fall 2017 \textit{bis}
 \end{textblock*}
 \
 
