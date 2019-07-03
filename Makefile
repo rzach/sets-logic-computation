@@ -11,7 +11,7 @@
 
 .PHONY : FORCE_MAKE
 
-all: phil379-screen.pdf phil379-print.pdf index.html
+all: phil379-screen.pdf phil379-print.pdf phil379-print-cover.pdf index.html
 
 %.pdf : %.tex olprevision.tex FORCE_MAKE
 	latexmk -pdf -dvi- -ps- $<

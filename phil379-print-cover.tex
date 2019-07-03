@@ -1,0 +1,24 @@
+% phil379-print-cover.tex
+
+% make a cover PDF for KDP Crown Quarto booksize.
+
+%\pdfminorversion=4
+
+\documentclass[cover]{../../sty/open-logic-book}
+
+\def\olpath{../../}
+
+\input{phil379-metadata.tex}
+
+\setOLPpagenumber{374}
+
+\definecolor{OLPcolor}{RGB}{248,154,14}
+\definecolor{OLPdkcolor}{RGB}{104,65,6}
+\definecolor{OLPltcolor}{RGB}{248,203,137}
+
+\begin{document}
+
+\OLPprintcover{\hfill
+\includegraphics[scale=.75]{illustrations/Cover}\hfill{}
+}
+\end{document}
