@@ -16,7 +16,7 @@ all: phil379-screen.pdf phil379-print.pdf phil379-print-cover.pdf index.html
 %.pdf : %.tex olprevision.tex FORCE_MAKE
 	latexmk -pdf -dvi- -ps- $<
 
-index.html: README.md  webpage-template.html
+index.html: README.md  webpage-template.html phil379-screen.pdf
 	convert phil379-screen.pdf[0] phil379.png
 	pandoc --template webpage-template.html -f markdown -t html -o index.html README.md
 

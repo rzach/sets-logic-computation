@@ -30,7 +30,6 @@ To install and compile:
 If you use `git`, this should do it:
 ```
 # git clone https://github.com/OpenLogicProject/OpenLogic.git
-# cd assets
 # cd OpenLogic/courses
 # git clone https://github.com/rzach/phil379.git
 # cd ../assets
