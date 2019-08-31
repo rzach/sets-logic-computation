@@ -9,8 +9,8 @@
 
 \newglossaryentry{set-extensionality} {
   name={extensionality (of sets)},  
-  description={Sets $X$ and~$Y$ are identical, $X = Y$, iff every
-    element of~$X$ is also an element of~$Y$, and vice versa
+  description={Sets $A$ and~$B$ are identical, $A = B$, iff every
+    element of~$A$ is also an element of~$B$, and vice versa
     (see \olref[sfr][set][bas]{sec})}}
 
 \newglossaryentry{sat-extensionality}{
@@ -32,58 +32,58 @@
 
 \newglossaryentry{cp} {
   name=Cartesian product,
-  symbol = {\ensuremath{X \times Y}},  
-  description={Set of all pairs of {elements} of $X$ and $Y$; $X
-    \times Y = \Setabs{\tuple{x, y}}{x \in X \text{ and } y \in Y}$
+  symbol = {\ensuremath{A \times B}},  
+  description={Set of all pairs of {elements} of $A$ and $B$; $A
+    \times B = \Setabs{\tuple{x, y}}{x \in A \text{ and } y \in B}$
     (see \olref[sfr][set][pai]{sec})} }
 
 \newglossaryentry{subset} {
   name=subset,
-  symbol = {\ensuremath{X \subseteq Y}},
+  symbol = {\ensuremath{A \subseteq B}},
   description = {A set every {element} of which is an {element} of
-    a given set~$Y$ (see \olref[sfr][set][sub]{sec})}  }
+    a given set~$B$ (see \olref[sfr][set][sub]{sec})}  }
 
 \newglossaryentry{finsequence} {
   name = {sequence (finite)},
-  symbol = {\ensuremath{X^*}},
-  description = {A finite string of {element}s of~$X$; an
-    {element} of $X^n$ for some $n$ (see
-    \olref[sfr][set][set]{sec})}}
+  symbol = {\ensuremath{A^*}},
+  description = {A finite string of {element}s of~$A$; an
+    {element} of $A^n$ for some $n$ (see
+    \olref[sfr][set][imp]{sec})}}
 
 \newglossaryentry{infsequence} {
   name = {sequence (infinite) },
-  symbol = {\ensuremath{X^\omega}},
-  description = {A gapless, unending sequence of {element}s of~$X$;
-    formally, a function $s\colon \PosInt \to X$ (see
-    \olref[sfr][set][set]{sec})}}
+  symbol = {\ensuremath{A^\omega}},
+  description = {A gapless, unending sequence of {element}s of~$A$;
+    formally, a function $s\colon \PosInt \to A$ (see
+    \olref[sfr][set][imp]{sec})}}
 
 \newglossaryentry{ps} {
   name=power set,
-  symbol = {\ensuremath{\Pow{X}}},  
-  description={The set consisting of all \glspl{subset} of a set~$X$,
-    $\Pow{X} = \Setabs{x}{x \subseteq X}$ (see
+  symbol = {\ensuremath{\Pow{A}}},  
+  description={The set consisting of all \glspl{subset} of a set~$A$,
+    $\Pow{A} = \Setabs{x}{x \subseteq A}$ (see
     \olref[sfr][set][sub]{sec})} }
 
 \newglossaryentry{union} {
   name=union,
-  symbol = {\ensuremath{X \cup Y}},
-  description={The set of all {element}s of $X$ and $Y$ together: $X
-    \cup Y = \Setabs{x}{x \in X \lor x\in Y}$ (see
+  symbol = {\ensuremath{A \cup B}},
+  description={The set of all {element}s of $A$ and $B$ together: $A
+    \cup B = \Setabs{x}{x \in A \lor x\in B}$ (see
     \olref[sfr][set][uni]{sec})} }
 
 \newglossaryentry{intersection} {
   name=intersection,
-  symbol = {\ensuremath{X \cap Y}},
+  symbol = {\ensuremath{A \cap B}},
   description={The set of all things which are {element}s of both
-    $X$ and~$Y$: $X \cap Y = \Setabs{x}{x \in X \land x\in Y}$ (see
+    $A$ and~$B$: $A \cap B = \Setabs{x}{x \in A \land x\in B}$ (see
     \olref[sfr][set][uni]{sec})} }
 
 \newglossaryentry{difference} {
   name=difference,
-  symbol = {\ensuremath{X \setminus Y}},
-  description={the set of all {elements} of $X$ which are not also
-  {element}s of~$Y$: $X\setminus Y = \Setabs{x}{x\in X \text{ and }
-    x \notin Y}$ (see \olref[sfr][set][uni]{sec})} }
+  symbol = {\ensuremath{A \setminus B}},
+  description={the set of all {elements} of $A$ which are not also
+  {element}s of~$B$: $A \setminus B = \Setabs{x}{x \in A \text{ and }
+    x \notin B}$ (see \olref[sfr][set][uni]{sec})} }
 
 \newglossaryentry{disjoint}{
   name=disjoint, 
@@ -99,9 +99,9 @@
 
 \newglossaryentry{function} {
   name=function,
-  symbol = {\ensuremath{f \colon X \to Y}},
-  description={A mapping of each element of a \gls{fdomain}~$X$ to an
-    element of the codomain~$Y$ (see \olref[sfr][fun][bas]{sec})} }
+  symbol = {\ensuremath{f \colon A \to B}},
+  description={A mapping of each element of a \gls{fdomain}~$A$ to an
+    element of the codomain~$B$ (see \olref[sfr][fun][bas]{sec})} }
 
 \newglossaryentry{fdomain} {
   name = {domain (of a function)},
@@ -113,27 +113,27 @@
   name = range,
   symbol = {\ensuremath{\ran{f}}},
   description = {the subset of the codomain that is actually output by
-    $f$; $\ran{f} = \Setabs{y \in Y}{f(x) = y \text{ for some $x \in
-        X$}}$ (see \olref[sfr][fun][bas]{sec})}}
+    $f$; $\ran{f} = \Setabs{y \in B}{f(x) = y \text{ for some $x \in
+        A$}}$ (see \olref[sfr][fun][bas]{sec})}}
 
 \newglossaryentry{graph} {
   name=graph (of a function),
-  description={the relation $R_f \subseteq X \times Y$ defined by $R_f
-    = \Setabs{\tuple{x,y}}{f(x) = y}$, if $f\colon X \pto Y$ (see
+  description={the relation $R_f \subseteq A \times B$ defined by $R_f
+    = \Setabs{\tuple{x,y}}{f(x) = y}$, if $f\colon A \pto B$ (see
     \olref[sfr][fun][rel]{sec})} }
 
 \newglossaryentry{inverse} {
   name=inverse function,
-  description={If $f\colon X \to Y$ is a \gls{bijection}, $f^{-1} \colon
-    Y \to X$ is the function with $f^-1(y) =$ whatever unique $x \in
-    X$ is such that $f(x) = y$ (see \olref[sfr][fun][inv]{sec})} }
+  description={If $f\colon A \to B$ is a \gls{bijection}, $f^{-1} \colon
+    B \to A$ is the function with $f^-1(y) =$ whatever unique $x \in
+    A$ is such that $f(x) = y$ (see \olref[sfr][fun][inv]{sec})} }
 
 \newglossaryentry{pf} {
   name=partial function,
-    symbol = {\ensuremath{f \colon X \pto Y}},
+    symbol = {\ensuremath{f \colon A \pto B}},
   description={A partial function is a mapping which assigns to every
-    {element} of~$X$ at most one {element} of~$Y$. If $f$ assigns
-    an element of~$Y$ to $x \in X$, $f(x)$ is defined, and otherwise
+    {element} of~$A$ at most one {element} of~$B$. If $f$ assigns
+    an element of~$B$ to $x \in A$, $f(x)$ is defined, and otherwise
     undefined (see \olref[sfr][fun][par]{sec})} }
 
 \newglossaryentry{tc} {
@@ -165,12 +165,12 @@
 
 \newglossaryentry{irreflexive} {
   name=irreflexive,
-  description={$R$ is irreflexive if, for no $x \in X$, $Rxx$ (see
+  description={$R$ is irreflexive if, for no $x \in A$, $Rxx$ (see
     \olref[sfr][rel][ord]{sec})} }
 
 \newglossaryentry{asymmetric} {
   name=asymmetric,
-  description={$R$ is asymmetric if for no pair $x,y\in X$ we have
+  description={$R$ is asymmetric if for no pair $x,y\in A$ we have
     $Rxy$ and $Ryx$ (see \olref[sfr][rel][ord]{sec})} }
 
 \newglossaryentry{so} {
@@ -190,12 +190,12 @@
 
 \newglossaryentry{br} {
   name=binary relation,
-  description={A subset of~$X^{2}$; we write $Rxy$ (or $xRy$) for
+  description={A subset of~$A^{2}$; we write $Rxy$ (or $xRy$) for
     $\tuple{x, y} \in R$ (see \olref[sfr][rel][set]{sec})} }
 
 \newglossaryentry{reflexive} {
   name=reflexive,
-  description={$R$ is reflexive iff, for every $x \in X$, $Rxx$ (see
+  description={$R$ is reflexive iff, for every $x \in A$, $Rxx$ (see
     \olref[sfr][rel][prp]{sec})} }
 
 \newglossaryentry{transitive} {
@@ -211,7 +211,7 @@
 
 \newglossaryentry{connected} {
   name=connected,
-  description={$R$ is connected if for all $x, y\in X$
+  description={$R$ is connected if for all $x, y\in A$
     with $x \neq y$, then either $Rxy$ or~$Ryx$ (see
     \olref[sfr][rel][prp]{sec})} }
 
@@ -222,15 +222,15 @@
 
 \newglossaryentry{sf} {
   name={surjective},
-  description={$f \colon X \rightarrow Y$ is {surjective} iff the
-    range of~$f$ is all of~$Y$, i.e., for every $y \in Y$ there is at
-    least one $x \in X$ such that~$f(x) = y$ (see
+  description={$f \colon A \to B$ is {surjective} iff the
+    range of~$f$ is all of~$B$, i.e., for every $y \in B$ there is at
+    least one $x \in A$ such that~$f(x) = y$ (see
     \olref[sfr][fun][kin]{sec})} }
 
 \newglossaryentry{if} {
   name={injective}, 
-  description={$f \colon X \rightarrow Y$ is {injective} iff for
-    each $y \in Y$ there is at most one $x \in X$ such that~$f(x) =
+  description={$f \colon A \to B$ is {injective} iff for
+    each $y \in B$ there is at most one $x \in A$ such that~$f(x) =
     y$; equivalently if whenever $x \neq x'$ then $f(x) \neq f(x')$
     (see \olref[sfr][fun][kin]{sec})} }
 
@@ -241,14 +241,14 @@
 
 \newglossaryentry{enumeration} {
   name=enumeration,  
-  description={A possibly infinite, possibly gappy list of all
-    {element}s of a set~$X$; formally a surjective function
-    $f\colon \Nat \pto X$ (see \olref[sfr][siz][enm]{sec})} }
+  description={A possibly infinite list of all
+    {element}s of a set~$A$; formally a surjective function
+    $f\colon \Nat \to A$ (see \olref[sfr][siz][enm]{sec})} }
 
 \newglossaryentry{equinumerous} {
   name=equinumerous,
-  description={$X$ and $Y$ are equinumerous iff there is a total
-    bijection from $X$ to $Y$ (see \olref[sfr][set][equ]{sec})} }
+  description={$A$ and $B$ are equinumerous iff there is a total
+    bijection from $A$ to $B$ (see \olref[sfr][siz][equ]{sec})} }
 
 \newglossaryentry{finitely satisfiable} {
   name={finitely satisfiable},  

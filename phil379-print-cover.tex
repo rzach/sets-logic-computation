@@ -2,7 +2,7 @@
 
 % make a cover PDF for KDP Crown Quarto booksize.
 
-\pdfminorversion=4
+%\pdfminorversion=3
 
 \documentclass[cover]{../../sty/open-logic-book}
 
@@ -10,7 +10,7 @@
 
 \input{phil379-metadata.tex}
 
-\setOLPpagenumber{374}
+\setOLPpagenumber{388}
 
 \definecolor{OLPcolor}{RGB}{248,154,14}
 \definecolor{OLPdkcolor}{RGB}{104,65,6}
@@ -18,7 +18,15 @@
 
 \begin{document}
 
-\OLPprintcover{\hfill
-\includegraphics[scale=.75]{illustrations/Cover}\hfill{}
+\OLPprintcover{\hfill\includegraphics[width=.29\textwidth]{\olpath/assets/portraits/cantor-circle.pdf}\hfill{}
+
+\hfill{}
+\includegraphics[width=.29\textwidth]{\olpath/assets/portraits/goedel-circle.pdf}
+\hfil\includegraphics[width=.29\textwidth]{\olpath/assets/portraits/turing-circle.pdf}\hfil{}
+\includegraphics[width=.29\textwidth]{\olpath/assets/portraits/skolem-circle.pdf}
+\hfill{}
+
+\hfill{}
+\includegraphics[width=.29\textwidth]{\olpath/assets/portraits/noether-circle.pdf}\hfill{}
 }
 \end{document}
