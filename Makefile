@@ -1,4 +1,4 @@
-# University of Calgary Logic II (Phil 379) text based on OLP
+# Sets, Logic, Computation text based on OLP
 # Makefile
 
 # YOU DO NOT HAVE TO USE THIS MAKEFILE
@@ -11,17 +11,17 @@
 
 .PHONY : FORCE_MAKE
 
-all: phil379-screen.pdf phil379-print.pdf phil379-print-cover.pdf index.html
+all: slc-screen.pdf slc-print.pdf slc-print-cover.pdf index.html
 
 %.pdf : %.tex olprevision.tex FORCE_MAKE
 	latexmk -pdf -dvi- -ps- $<
 
-index.html: README.md  webpage-template.html phil379-screen.pdf
-	convert phil379-screen.pdf[0] phil379.png
+index.html: README.md  webpage-template.html slc-screen.pdf
+	convert slc-screen.pdf[0] slc.png
 	pandoc --template webpage-template.html -f markdown -t html -o index.html README.md
 
 clean:	
-	latexmk -c phil379-screen.tex phil379-print.tex
+	latexmk -c slc-screen.tex slc-print.tex
 
 olprevision.tex: FORCE_MAKE
 	../../misc/makeolprevision ../..

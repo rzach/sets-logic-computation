@@ -1,8 +1,8 @@
-% phil379-screen.tex
+% slc-screen.tex
 
-% driver file phil379-screen.tex to produce the Logic II textbook on
-% with same type block as in printed version, but but with on-screen
-% features (color, links, etc).
+% driver file slc-screen.tex to produce the Sets, Logic, Computation
+% textbook on with same type block as in printed version, but but with
+% on-screen features (color, links, etc).
 
 \documentclass[screen]{../../sty/open-logic-book}
 
@@ -13,11 +13,11 @@
 \usepackage[nonumberlist,toc,style=index]{glossaries}
 \makeglossaries
 
-\def\oljobname{phil379}
+\def\oljobname{slc}
 
 % \olpath has to point to the location of the OLP main
 % directory/folder. We're compiling from subdirectory
-% courses/phil379/, so the main directory is two
+% courses/sets-logic-computation/, so the main directory is two
 % levels up.
 
 \newcommand{\olpath}{../../}
@@ -27,7 +27,7 @@
 
 \input{\olpath/sty/open-logic.sty}
 
-\input{phil379-metadata}
+\input{slc-metadata}
 
 % we want all the problems deferred to the very end
 
@@ -56,7 +56,6 @@
 
 % Now load the actual text
 
-\input{phil379}
+\input{slc}
 
 \end{document}
-

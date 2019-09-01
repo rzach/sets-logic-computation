@@ -1,7 +1,7 @@
 # phil379
 # Sets, Logic, Computation
 
-![Book Cover](https://slc.openlogicproject.org/phil379.png)\ 
+![Book Cover](https://slc.openlogicproject.org/slc.png)\ 
 
 _Sets, Logic, Computation_ is an introductory textbook on metalogic.
 It covers naive set theory, first-order logic, sequent calculus and

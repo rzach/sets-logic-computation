@@ -1,7 +1,7 @@
-% phil379-print.tex
+% slc-print.tex
 %
-% driver file phil379-print.tex to produce the Logic III textbook for
-% printing on KDPs's quarto stock.
+% driver file slc-print.tex to produce the Sets, Logic, Computation
+% textbook for printing on KDPs's quarto stock.
 
 %\pdfminorversion=3
 
@@ -10,7 +10,7 @@
 \usepackage[nonumberlist,toc,style=index]{glossaries}
 \makeglossaries
 
-\def\oljobname{phil379}
+\def\oljobname{slc}
 
 % \olpath has to point to the location of the OLP main
 % directory/folder.  We're compiling from subdirectory
@@ -24,7 +24,7 @@
 
 \input{\olpath/sty/open-logic.sty}
 
-\input{phil379-metadata}
+\input{slc-metadata}
 
 % we want all the problems deferred to the very end
 
@@ -40,6 +40,6 @@
 
 % load the text
 
-\input{phil379}
+\input{slc}
 
 \end{document}
