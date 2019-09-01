@@ -57,9 +57,9 @@ material. It in turn includes other files, most of them from the
 `OpenLogic` repository. So you won't get a complete book unless you
 download into the right subdirectory of and compile from there.
 
-[![Creative Commons License](http://mirrors.creativecommons.org/presskit/buttons/88x31/png/by.png)](http://creativecommons.org/licenses/by/4.0/) 
+[![Creative Commons License](https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by.png)](https://creativecommons.org/licenses/by/4.0/) 
 
-_[Sets, Logic, Computation](https://github.com/rzach/sets-logic-computation/)_ by [Richard
-Zach](http://richardzach.org/) is licensed under a [Creative
+_[Sets, Logic, Computation](https://slc.openlogicproject.org/)_ by [Richard
+Zach](https://richardzach.org/) is licensed under a [Creative
 Commons Attribution 4.0 International
-License](http://creativecommons.org/licenses/by/4.0/).
+License](https://creativecommons.org/licenses/by/4.0/).
