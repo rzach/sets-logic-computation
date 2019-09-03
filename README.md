@@ -18,7 +18,8 @@ Text](https://github.com/OpenLogicProject/OpenLogic/)_.
 You can [download the
 PDF](https://slc.openlogicproject.org/slc-screen.pdf) of the most recent version
 from the [Open Logic builds
-site](https://builds.openlogicproject.org/), or order a hardcopy from [Amazon](https://www.amazon.com/dp/1975687132/) [[CA](https://www.amazon.ca/dp/1975687132/)] [[UK](https://www.amazon.co.uk/dp/1975687132/)] [[DE](https://www.amazon.de/dp/1975687132/)].
+site](https://builds.openlogicproject.org/), or order a hardcopy from
+Amazon [[US](https://www.amazon.com/dp/1077322127)|[CA](https://www.amazon.ca/dp/1077322127)|[UK](https://www.amazon.co.uk/dp/1077322127)|[DE](https://www.amazon.de/dp/1077322127)].
 
 To install and compile:
 
