@@ -106,6 +106,9 @@ _minted*
 # nomencl
 *.nlo
 
+# theorem
+*.thm
+
 # sagetex
 *.sagetex.sage
 *.sagetex.py
@@ -127,5 +130,9 @@ sympy-plots-for-*.tex/
 *.sav
 
 *~
-#*
+*#
 *.pcr
+
+# html etc. files
+*.html
+*.css
