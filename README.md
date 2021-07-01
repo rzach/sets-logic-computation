@@ -12,7 +12,7 @@ by _[forall x](https://forallx.openlogicproject.org)_.
 
 This repository/directory only contains the LaTeX files and
 illustrations needed to typeset the textbook _Sets, Logic,
-Computation_. It also required the material in the _[Open Logic
+Computation_. It *also* requires the material in the _[Open Logic
 Text](https://github.com/OpenLogicProject/OpenLogic/)_.
 
 You can [download the
@@ -28,7 +28,7 @@ To install and compile:
 - Navigate to the subdirectory `courses/`
 - Put the content of [this repository](https://github.com/rzach/sets-logic-computation) into a subdirectory of it, say
   `courses/sets-logic-computation/`.
-- To get the graphics for the cover, navigate to the subdirectory `OpenLogic/assets` and put the content of `photos` into the subdirectory `photos`, and the content of `portraits` into the subdirectory `portraits`
+- To get the graphics for the cover, navigate to the subdirectory `OpenLogic/assets` and put the content of `[photos](https://github.com/OpenLogicProject/photos)` into the subdirectory `photos`, and the content of `[portraits](https://github.com/OpenLogicProject/portraits)` into the subdirectory `portraits`
 
 If you use `git`, this should do it:
 ```
