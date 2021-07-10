@@ -1,35 +1,34 @@
-The \emph{completeness theorem} is the converse of the \emph{soundness
-  theorem}. In one form it states that if $\Gamma \Entails !A$ then
-$\Gamma \Proves !A$, in another that if $\Gamma$ is consistent then it
-is satisfiable. We proved the second form (and derived the first from
-the second). The proof is involved and requires a number of steps. We
-start with a consistent set~$\Gamma$. First we add infinitely many
-new constant symbols~$c_i$ as well as formulas of the form
-$\lexists[x][!A(x)] \lif !A(c)$ where each formula~$!A(x)$ with a free
-variable in the expanded language is paired with one of the new
-constants. This results in a \emph{saturated} consistent set of
-sentences containing~$\Gamma$. It is still consistent. Now we take
-that set and extend it to a \emph{complete consistent set}. A
-complete consistent set has the nice property that for any
-sentence~$!A$, either $!A$ or $\lnot !A$ is in the set (but never
-both). Since we started from a saturated set, we now have a saturated,
-complete, consistent set of sentences~$\Gamma^*$ that
-includes~$\Gamma$. From this set it is now possible to define a
-structure~$\Struct{M}$ such that $\Sat{M(\Gamma^*)}{!A}$ iff
-$!A \in \Gamma^*$. In particular, $\Sat{M(\Gamma^*)}{\Gamma}$, i.e.,
-$\Gamma$ is satisfiable. If $=$ is present, the construction is
-slightly more complex.
+\emph{Proof systems} provide purely syntactic methods for
+characterizing consequence and compatibility between sentences.
+The \emph{sequent calculus} is one such proof
+system. A \emph{derivation} in it consists of a tree of sequents (a
+sequent $\Gamma \Sequent \Delta$ consists of two sequences of formulas
+separated by~$\Sequent$). The topmost sequents in a derivation
+are \emph{initial sequents} of the form $!A \Sequent !A$.  All other
+sequents, for the derivation to be correct, must be correctly
+justified by one of a number of \emph{inference rules}. These come in
+pairs; a rule for operating on the left and on the right side of a
+sequent for each connective and quantifier. For instance, if a sequent
+$\Gamma \Sequent \Delta, !A \lif !B$ is justified by the
+$\RightR{\lif}$ rule, the preceding sequent (the \emph{premise}) must
+be $!A, \Gamma \Sequent \Delta, !B$. Some rules also allow the order
+or number of sentences in a sequent to be manipulated, e.g.,
+the \RightR{\Exchange} rule allows two formulas on the right side of a
+sequent to be switched.
 
-Two important corollaries follow from the completeness theorem. The
-\emph{compactness theorem} states that $\Gamma \Entails !A$ iff
-$\Gamma_0 \Entails !A$ for some finite $\Gamma_0 \subseteq \Gamma$. An
-equivalent formulation is that $\Gamma$ is satisfiable iff every
-finite $\Gamma_0 \subseteq \Gamma$ is satisfiable. The compactness
-theorem is useful to prove the existence of structures with certain
-properties. For instance, we can use it to show that there are
-infinite models for every theory which has arbitrarily large finite
-models. This means in particular that finitude cannot be expressed in
-first-order logic. The second corollary, the \emph{L\"owenheim-Skolem
-  Theorem}, states that every satisfiable $\Gamma$ has a countable
-model. It in turn shows that uncountability cannot be expressed in
-first-order logic.
+If there is a derivation of the sequent $\quad \Sequent !A$, we say
+$!A$ is a \emph{theorem} and write~$\Proves !A$. If there is a
+derivation of $\Gamma_0 \Sequent !A$ where every $!B$ in $\Gamma_0$ is
+in~$\Gamma$, we say $!A$ is \emph{derivable from}~$\Gamma$ and write
+$\Gamma \Proves !A$. If there is a derivation of
+$\Gamma_0 \Sequent \quad$ where every $!B$ in $\Gamma_0$ is
+in~$\Gamma$, we say $\Gamma$ is \emph{inconsistent}, otherwise
+\emph{consistent}. These notions are interrelated, e.g., $\Gamma
+\Proves !A$ iff $\Gamma \cup \{\lnot !A\}$ is inconsistent. They are
+also related to the corresponding semantic notions, e.g., if $\Gamma
+\Proves !A$ then $\Gamma \Entails !A$. This property of proof
+systems---what can be derived from $\Gamma$ is guaranteed to be
+entailed by~$\Gamma$---is called \emph{soundness}. The \emph{soundness
+theorem} is proved by induction on the length of derivations, showing
+that each individual inference preserves validity of the conclusion
+sequent provided the premise sequents are valid.
