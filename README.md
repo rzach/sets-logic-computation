@@ -1,6 +1,6 @@
 # Sets, Logic, Computation
 
-![Book Cover](https://slc.openlogicproject.org/slc.png)
+[![Book Cover](https://slc.openlogicproject.org/slc.png)](https://slc.openlogicproject.org/slc-screen.pdf)
 
 _Sets, Logic, Computation_ is an introductory textbook on metalogic.
 It covers naive set theory, first-order logic, sequent calculus and
@@ -18,8 +18,8 @@ Text](https://github.com/OpenLogicProject/OpenLogic/)_.
 You can [download the
 PDF](https://slc.openlogicproject.org/slc-screen.pdf) of the most recent version
 from the [Open Logic builds
-site](https://builds.openlogicproject.org/), or order a hardcopy from
-Amazon [[US](https://www.amazon.com/dp/1077322127)|[CA](https://www.amazon.ca/dp/1077322127)|[UK](https://www.amazon.co.uk/dp/1077322127)|[DE](https://www.amazon.de/dp/1077322127)].
+site](https://builds.openlogicproject.org/), or order a hardcopy of the Fall 2021 edition from
+Amazon [[US](https://www.amazon.com/dp/B099C47ND8)|[CA](https://www.amazon.ca/dp/B099C47ND8)|[UK](https://www.amazon.co.uk/dp/B099C47ND8)|[DE](https://www.amazon.de/dp/B099C47ND8)|[AU](https://www.amazon.com.au/dp/B099C47ND8)].
 
 To install and compile:
 
