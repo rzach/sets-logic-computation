@@ -18,7 +18,9 @@ Text](https://github.com/OpenLogicProject/OpenLogic/)_.
 You can [download the
 PDF](https://slc.openlogicproject.org/slc-screen.pdf) of the most recent version
 from the [Open Logic builds
-site](https://builds.openlogicproject.org/), or order a hardcopy of the Fall 2021 edition from
+site](https://builds.openlogicproject.org/).
+
+You can order a hardcopy of the Fall 2021 edition from
 Amazon [[US](https://www.amazon.com/dp/B099C47ND8)|[CA](https://www.amazon.ca/dp/B099C47ND8)|[UK](https://www.amazon.co.uk/dp/B099C47ND8)|[DE](https://www.amazon.de/dp/B099C47ND8)|[AU](https://www.amazon.com.au/dp/B099C47ND8)].
 
 To install and compile:
@@ -28,7 +30,7 @@ To install and compile:
 - Navigate to the subdirectory `courses/`
 - Put the content of [this repository](https://github.com/rzach/sets-logic-computation) into a subdirectory of it, say
   `courses/sets-logic-computation/`.
-- To get the graphics for the cover, navigate to the subdirectory `OpenLogic/assets` and put the content of `[photos](https://github.com/OpenLogicProject/photos)` into the subdirectory `photos`, and the content of `[portraits](https://github.com/OpenLogicProject/portraits)` into the subdirectory `portraits`
+- To get the graphics for the cover, navigate to the subdirectory `OpenLogic/assets` and put the content of [`photos`](https://github.com/OpenLogicProject/photos) into the subdirectory `photos`, and the content of [`portraits`](https://github.com/OpenLogicProject/portraits) into the subdirectory `portraits`
 
 If you use `git`, this should do it:
 ```
