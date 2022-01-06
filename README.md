@@ -15,10 +15,26 @@ illustrations needed to typeset the textbook _Sets, Logic,
 Computation_. It *also* requires the material in the _[Open Logic
 Text](https://github.com/OpenLogicProject/OpenLogic/)_.
 
-You can [download the
-PDF](https://slc.openlogicproject.org/slc-screen.pdf) of the most recent version
-from the [Open Logic builds
-site](https://builds.openlogicproject.org/).
+You can download the PDF of the most recent version from the [Open
+Logic builds site](https://builds.openlogicproject.org/):
+
+- [Screen version](https://slc.openlogicproject.org/slc-screen.pdf)
+- [Print version](https://slc.openlogicproject.org/slc-print.pdf)
+
+We also have archived versions:
+
+- <a
+  href="https://slc.openlogicproject.org/archives/f21/slc-screen.pdf"
+  rel="nofollow">Fall
+  2021</a>.
+- <a
+  href="https://slc.openlogicproject.org/archives/f19/slc-screen.pdf"
+  rel="nofollow">Fall
+  2019</a>.
+- <a
+  href="https://slc.openlogicproject.org/archives/f16/slc-screen.pdf"
+  rel="nofollow">Fall
+  2016</a>.
 
 You can order a hardcopy of the Fall 2021 edition from
 Amazon [[US](https://www.amazon.com/dp/B099C47ND8)|[CA](https://www.amazon.ca/dp/B099C47ND8)|[UK](https://www.amazon.co.uk/dp/B099C47ND8)|[DE](https://www.amazon.de/dp/B099C47ND8)|[AU](https://www.amazon.com.au/dp/B099C47ND8)].
