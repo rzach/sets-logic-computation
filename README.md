@@ -36,8 +36,11 @@ We also have archived versions:
   rel="nofollow">Fall
   2016</a>.
 
-You can order a hardcopy of the Fall 2021 edition from
-Amazon [[US](https://www.amazon.com/dp/B099C47ND8)|[CA](https://www.amazon.ca/dp/B099C47ND8)|[UK](https://www.amazon.co.uk/dp/B099C47ND8)|[DE](https://www.amazon.de/dp/B099C47ND8)|[AU](https://www.amazon.com.au/dp/B099C47ND8)].
+You can order a hardcopy from
+Amazon
+[[US](https://www.amazon.com/dp/B099C47ND8)|[CA](https://www.amazon.ca/dp/B099C47ND8)|[UK](https://www.amazon.co.uk/dp/B099C47ND8)|[DE](https://www.amazon.de/dp/B099C47ND8)|[AU](https://www.amazon.com.au/dp/B099C47ND8)].
+Please note that the version on Amazon is not updated regularly and so
+may not match the most recent PDF.
 
 To install and compile:
 
