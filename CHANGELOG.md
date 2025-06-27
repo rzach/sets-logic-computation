@@ -2,7 +2,8 @@
 
 ## Fall 2025 
 
-- Maintenance release. Many small corrections, additional exercises.
+- Many small(ish) corrections, additional exercises.
+- New section on trees in chapter on relations.
 
 ## Fall 2021
 
