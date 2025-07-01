@@ -24,6 +24,10 @@ Logic builds site](https://builds.openlogicproject.org/):
 We also have archived versions:
 
 - <a
+  href="https://slc.openlogicproject.org/archives/f25/slc-screen.pdf"
+  rel="nofollow">Fall
+  2025</a>.
+- <a
   href="https://slc.openlogicproject.org/archives/f21/slc-screen.pdf"
   rel="nofollow">Fall
   2021</a>.
